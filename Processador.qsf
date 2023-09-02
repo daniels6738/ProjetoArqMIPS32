@@ -60,14 +60,15 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name VERILOG_FILE data_mem.v
 set_global_assignment -name VERILOG_FILE instruction_mem.v
 set_global_assignment -name VERILOG_FILE regfile.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform2.vwf
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VERILOG_FILE ExtensorSinal.v
 set_global_assignment -name VERILOG_FILE Mux2x1_32bits.v
 set_global_assignment -name VERILOG_FILE Mux2x1_5bits.v
 set_global_assignment -name VERILOG_FILE RegistradorPC.v
 set_global_assignment -name VERILOG_FILE PC_Soma4.v
 set_global_assignment -name VERILOG_FILE PC_SomaDesvio.v
+set_global_assignment -name VERILOG_FILE ULA.v
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

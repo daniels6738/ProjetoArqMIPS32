@@ -13,7 +13,7 @@ input wire Reset
 reg [31:0] regMem [0:31];
 
 initial begin
-regMem[0] = 32'b00000000000000000000000000000000;
+regMem[0] = 32'b0;
 end
 
 integer i;

@@ -1,5 +1,5 @@
 Flow report for Processador
-Sat Sep 02 18:23:22 2023
+Sat Sep 02 19:45:10 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,16 +41,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Sep 02 18:23:22 2023       ;
+; Flow Status                     ; Successful - Sat Sep 02 19:45:10 2023       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; Processador                                 ;
-; Top-level Entity Name           ; regfile                                     ;
+; Top-level Entity Name           ; ULA                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CGXFC7C7F23C8                              ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 992                                         ;
-; Total pins                      ; 114                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 101                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/02/2023 17:03:36 ;
+; Start date & time ; 09/02/2023 19:45:02 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Processador         ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 2543655139965.169368501619616          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 2543655139965.169369470220468          ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -89,13 +89,13 @@ https://fpgasoftware.intel.com/eula.
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --          ; eda_simulation                    ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --                                ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; regfile     ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; regfile     ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; regfile     ; Top                               ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; ULA         ; Top                               ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; ULA         ; Top                               ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; ULA         ; Top                               ;
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --                                ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --                                ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --                                ;
-; TOP_LEVEL_ENTITY                    ; regfile                                ; Processador   ; --          ; --                                ;
+; TOP_LEVEL_ENTITY                    ; ULA                                    ; Processador   ; --          ; --                                ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 
 
@@ -104,22 +104,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4823 MB             ; 00:00:10                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4723 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4728 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4728 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4728 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4728 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4728 MB             ; 00:00:00                           ;
-; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:10                           ;
+; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4812 MB             ; 00:00:11                           ;
+; Total                ; 00:00:09     ; --                      ; --                  ; 00:00:11                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -129,20 +115,6 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -150,20 +122,6 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Processador -c Processador
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/modelsim/Waveform2.vwf.vt"
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform2.vwf.vt"
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/" Processador -c Processador
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform2.vwf.vt"
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/" Processador -c Processador
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/modelsim/Waveform2.vwf.vt"
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform2.vwf.vt"
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/" Processador -c Processador
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/modelsim/Waveform2.vwf.vt"
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform2.vwf.vt"
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/" Processador -c Processador
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/modelsim/Waveform2.vwf.vt"
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform2.vwf.vt"
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/" Processador -c Processador
 
 
 
