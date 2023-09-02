@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform2.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform3.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform3.vwf.vt"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,10 +26,12 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sat Sep 02 18:23:21 2023
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform2.vwf.vt"
+    Info: Processing started: Sat Sep 02 20:07:52 2023
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform3.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform3.vwf.vt"
 Info (119006): Selected device 5CGXFC7C7F23C8 for design "Processador"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+
+ing (201005): Ignoring output pin "result[10]" in vector source file when writing test bench files
 
 Completed successfully. 
 
@@ -56,15 +58,15 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sat Sep 02 18:23:22 2023
+    Info: Processing started: Sat Sep 02 20:07:53 2023
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/" Processador -c Processador
 Info (119006): Selected device 5CGXFC7C7F23C8 for design "Processador"
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file Processador.vo in folder "D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4728 megabytes
-    Info: Processing ended: Sat Sep 02 18:23:22 2023
-    Info: Elapsed time: 00:00:00
+    Info: Peak virtual memory: 4725 megabytes
+    Info: Processing ended: Sat Sep 02 20:07:54 2023
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 Completed successfully. 
@@ -87,55 +89,51 @@ Reading pref.tcl
 
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:23:23 on Sep 02,2023
+# Start time: 20:07:54 on Sep 02,2023
 # vlog -work work Processador.vo 
-# -- Compiling module regfile
+# -- Compiling module ULA
 
 # 
 # Top level modules:
-# 	regfile
-# End time: 18:23:24 on Sep 02,2023, Elapsed time: 0:00:01
+# 	ULA
+# End time: 20:07:55 on Sep 02,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 18:23:24 on Sep 02,2023
-# vlog -work work Waveform2.vwf.vt 
+# Start time: 20:07:55 on Sep 02,2023
+# vlog -work work Waveform3.vwf.vt 
 
-# -- Compiling module regfile_vlg_vec_tst
+# -- Compiling module ULA_vlg_vec_tst
 # 
 # Top level modules:
-# 	regfile_vlg_vec_tst
-# End time: 18:23:24 on Sep 02,2023, Elapsed time: 0:00:00
+# 	ULA_vlg_vec_tst
+# End time: 20:07:55 on Sep 02,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
-# vsim -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.regfile_vlg_vec_tst 
-# Start time: 18:23:24 on Sep 02,2023
-# Loading work.regfile_vlg_vec_tst
-# Loading work.regfile
+# vsim -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ULA_vlg_vec_tst 
+# Start time: 20:07:55 on Sep 02,2023
+# Loading work.ULA_vlg_vec_tst
+# Loading work.ULA
 # Loading cyclonev_ver.cyclonev_io_obuf
 # Loading cyclonev_ver.cyclonev_io_ibuf
 # Loading cyclonev_ver.cyclonev_lcell_comb
-# Loading altera_ver.dffeas
-# Loading altera_ver.PRIM_GDFF_LOW
-# ** Warning: Design size of 10840 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
-# Expect performance to be adversely affected.
 # after#25
+# ** Note: $finish    : Waveform3.vwf.vt(51)
+#    Time: 1 us  Iteration: 0  Instance: /ULA_vlg_vec_tst
 
-# ** Note: $finish    : Waveform2.vwf.vt(59)
-#    Time: 1 us  Iteration: 0  Instance: /regfile_vlg_vec_tst
-# End time: 18:23:25 on Sep 02,2023, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 1
+# End time: 20:07:55 on Sep 02,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf...
+Reading D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform3.vwf...
 
 Reading D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Processador.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Processador_20230902182325.sim.vwf
+Writing the resulting VWF to D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Processador_20230902200755.sim.vwf
 
 Finished VCD to VWF conversion.
 
