@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "09/02/2023 17:05:02"
+// Generated on "09/02/2023 18:23:21"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          regfile
 // 
@@ -89,6 +89,8 @@ end
 initial
 begin
 	ReadAddr2[4] = 1'b0;
+	ReadAddr2[4] = #340000 1'b1;
+	ReadAddr2[4] = #200000 1'b0;
 end 
 // ReadAddr2[ 3 ]
 initial
@@ -99,6 +101,8 @@ end
 initial
 begin
 	ReadAddr2[2] = 1'b0;
+	ReadAddr2[2] = #340000 1'b1;
+	ReadAddr2[2] = #200000 1'b0;
 end 
 // ReadAddr2[ 1 ]
 initial
@@ -115,18 +119,22 @@ end
 initial
 begin
 	RegWrite = 1'b1;
-	RegWrite = #180000 1'b0;
+	RegWrite = #200000 1'b0;
 end 
 
 // Reset
 initial
 begin
-	Reset = 1'b1;
+	Reset = 1'b0;
+	Reset = #380000 1'b1;
+	Reset = #20000 1'b0;
 end 
 // WriteAddr[ 4 ]
 initial
 begin
 	WriteAddr[4] = 1'b0;
+	WriteAddr[4] = #160000 1'b1;
+	WriteAddr[4] = #100000 1'b0;
 end 
 // WriteAddr[ 3 ]
 initial
@@ -137,6 +145,8 @@ end
 initial
 begin
 	WriteAddr[2] = 1'b0;
+	WriteAddr[2] = #160000 1'b1;
+	WriteAddr[2] = #100000 1'b0;
 end 
 // WriteAddr[ 1 ]
 initial
@@ -155,6 +165,10 @@ begin
 	clk = 1'b0;
 	clk = #80000 1'b1;
 	clk = #40000 1'b0;
+	clk = #60000 1'b1;
+	clk = #20000 1'b0;
+	clk = #40000 1'b1;
+	clk = #20000 1'b0;
 end 
 // WriteData[ 31 ]
 initial
@@ -235,21 +249,29 @@ end
 initial
 begin
 	WriteData[16] = 1'b0;
+	WriteData[16] = #220000 1'b1;
+	WriteData[16] = #40000 1'b0;
 end 
 // WriteData[ 15 ]
 initial
 begin
 	WriteData[15] = 1'b0;
+	WriteData[15] = #220000 1'b1;
+	WriteData[15] = #40000 1'b0;
 end 
 // WriteData[ 14 ]
 initial
 begin
 	WriteData[14] = 1'b0;
+	WriteData[14] = #220000 1'b1;
+	WriteData[14] = #40000 1'b0;
 end 
 // WriteData[ 13 ]
 initial
 begin
 	WriteData[13] = 1'b0;
+	WriteData[13] = #220000 1'b1;
+	WriteData[13] = #40000 1'b0;
 end 
 // WriteData[ 12 ]
 initial
@@ -265,6 +287,8 @@ end
 initial
 begin
 	WriteData[10] = 1'b0;
+	WriteData[10] = #220000 1'b1;
+	WriteData[10] = #40000 1'b0;
 end 
 // WriteData[ 9 ]
 initial
@@ -297,12 +321,18 @@ begin
 	WriteData[4] = 1'b0;
 	WriteData[4] = #60000 1'b1;
 	WriteData[4] = #40000 1'b0;
+	WriteData[4] = #60000 1'b1;
+	WriteData[4] = #40000 1'b0;
 end 
 // WriteData[ 3 ]
 initial
 begin
 	WriteData[3] = 1'b0;
 	WriteData[3] = #60000 1'b1;
+	WriteData[3] = #40000 1'b0;
+	WriteData[3] = #60000 1'b1;
+	WriteData[3] = #40000 1'b0;
+	WriteData[3] = #20000 1'b1;
 	WriteData[3] = #40000 1'b0;
 end 
 // WriteData[ 2 ]
@@ -316,12 +346,18 @@ begin
 	WriteData[1] = 1'b0;
 	WriteData[1] = #60000 1'b1;
 	WriteData[1] = #40000 1'b0;
+	WriteData[1] = #60000 1'b1;
+	WriteData[1] = #40000 1'b0;
 end 
 // WriteData[ 0 ]
 initial
 begin
 	WriteData[0] = 1'b0;
 	WriteData[0] = #60000 1'b1;
+	WriteData[0] = #40000 1'b0;
+	WriteData[0] = #60000 1'b1;
+	WriteData[0] = #40000 1'b0;
+	WriteData[0] = #20000 1'b1;
 	WriteData[0] = #40000 1'b0;
 end 
 endmodule

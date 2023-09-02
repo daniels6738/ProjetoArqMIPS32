@@ -1,4 +1,4 @@
-module ram #(
+module data_mem #(
 parameter mem_size = 32
 
 )

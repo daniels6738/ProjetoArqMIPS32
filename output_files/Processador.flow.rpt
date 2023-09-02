@@ -1,5 +1,5 @@
 Flow report for Processador
-Sat Sep 02 17:05:03 2023
+Sat Sep 02 18:23:22 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Sep 02 17:05:03 2023       ;
+; Flow Status                     ; Successful - Sat Sep 02 18:23:22 2023       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; Processador                                 ;
 ; Top-level Entity Name           ; regfile                                     ;
@@ -108,7 +108,18 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4723 MB             ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
 ; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4728 MB             ; 00:00:00                           ;
-; Total                ; 00:00:10     ; --                      ; --                  ; 00:00:10                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4728 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4728 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4728 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4724 MB             ; 00:00:00                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4728 MB             ; 00:00:00                           ;
+; Total                ; 00:00:14     ; --                      ; --                  ; 00:00:10                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -121,6 +132,17 @@ https://fpgasoftware.intel.com/eula.
 ; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -128,6 +150,17 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Processador -c Processador
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/modelsim/Waveform2.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform2.vwf.vt"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/" Processador -c Processador
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform2.vwf.vt"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/" Processador -c Processador
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/modelsim/Waveform2.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform2.vwf.vt"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/" Processador -c Processador
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/modelsim/Waveform2.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform2.vwf.vt"
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/" Processador -c Processador
 quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/modelsim/Waveform2.vwf.vt"
 quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform2.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform2.vwf.vt"
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/" Processador -c Processador

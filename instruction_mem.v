@@ -1,4 +1,4 @@
-module rom #(
+module instruction_mem #(
 parameter mem_size = 32
 
 )
