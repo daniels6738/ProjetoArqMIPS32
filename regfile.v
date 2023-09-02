@@ -18,9 +18,9 @@ end
 
 integer i;
 
-always @(posedge clk or negedge Reset)
+always @(posedge clk or posedge Reset)
 	begin
-	if(Reset == 0)
+	if(Reset == 1)
 		begin
 			for(i = 0; i < 32; i = i + 1) begin
 			regMem[i] = 0;
@@ -33,11 +33,10 @@ always @(posedge clk or negedge Reset)
 		end
 	end
 
-always @(*)
-	begin
-		if (RegWrite == 0) begin
-			ReadData1 = regMem[ReadAddr1];
-			ReadData2 = regMem[ReadAddr2];
-		end
+always @(ReadAddr1 or ReadAddr2) begin
+
+	ReadData1 = regMem[ReadAddr1];
+	ReadData2 = regMem[ReadAddr2];
+		
 	end
 endmodule

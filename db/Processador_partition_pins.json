@@ -280,10 +280,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "RegWrite",
-					"strict" : false
-				},
-				{
 					"name" : "ReadAddr2[4]",
 					"strict" : false
 				},
@@ -313,6 +309,10 @@
 				},
 				{
 					"name" : "Reset",
+					"strict" : false
+				},
+				{
+					"name" : "RegWrite",
 					"strict" : false
 				},
 				{
