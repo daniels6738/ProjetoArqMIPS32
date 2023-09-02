@@ -1,6 +1,6 @@
 Analysis & Synthesis report for Processador
-Sat Sep 02 15:06:45 2023
-Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Sat Sep  2 15:52:54 2023
+Quartus Prime Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 
 
 ---------------------
@@ -14,18 +14,19 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. User-Specified and Inferred Latches
-  9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |ram
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 2020  Intel Corporation. All rights reserved.
+Copyright (C) 2023  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -42,27 +43,27 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Sep 02 15:06:45 2023       ;
-; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                   ; Processador                                 ;
-; Top-level Entity Name           ; ram                                         ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 32                                          ;
-; Total pins                      ; 98                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++---------------------------------+------------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Sep  2 15:52:54 2023          ;
+; Quartus Prime Version           ; 22.1std.2 Build 922 07/20/2023 SC Lite Edition ;
+; Revision Name                   ; Processador                                    ;
+; Top-level Entity Name           ; regfile                                        ;
+; Family                          ; Cyclone V                                      ;
+; Logic utilization (in ALMs)     ; N/A                                            ;
+; Total registers                 ; 992                                            ;
+; Total pins                      ; 114                                            ;
+; Total virtual pins              ; 0                                              ;
+; Total block memory bits         ; 0                                              ;
+; Total DSP Blocks                ; 0                                              ;
+; Total HSSI RX PCSs              ; 0                                              ;
+; Total HSSI PMA RX Deserializers ; 0                                              ;
+; Total HSSI TX PCSs              ; 0                                              ;
+; Total HSSI PMA TX Serializers   ; 0                                              ;
+; Total PLLs                      ; 0                                              ;
+; Total DLLs                      ; 0                                              ;
++---------------------------------+------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -71,7 +72,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
-; Top-level entity name                                                           ; ram                ; Processador        ;
+; Top-level entity name                                                           ; regfile            ; Processador        ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
@@ -165,44 +166,46 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                    ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                      ; Library ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
-; ram.v                            ; yes             ; User Verilog HDL File  ; D:/Rural/arquitetura_mips_sadge/Processador/ram.v ;         ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                    ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                      ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------+---------+
+; regfile.v                        ; yes             ; User Verilog HDL File  ; D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------+---------+
 
 
-+----------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                    ;
-+---------------------------------------------+------------------+
-; Resource                                    ; Usage            ;
-+---------------------------------------------+------------------+
-; Estimate of Logic utilization (ALMs needed) ; 832              ;
-;                                             ;                  ;
-; Combinational ALUT usage for logic          ; 1344             ;
-;     -- 7 input functions                    ; 256              ;
-;     -- 6 input functions                    ; 64               ;
-;     -- 5 input functions                    ; 0                ;
-;     -- 4 input functions                    ; 0                ;
-;     -- <=3 input functions                  ; 1024             ;
-;                                             ;                  ;
-; Dedicated logic registers                   ; 32               ;
-;                                             ;                  ;
-; I/O pins                                    ; 98               ;
-;                                             ;                  ;
-; Total DSP Blocks                            ; 0                ;
-;                                             ;                  ;
-; Maximum fan-out node                        ; address[2]~input ;
-; Maximum fan-out                             ; 288              ;
-; Total fan-out                               ; 5474             ;
-; Average fan-out                             ; 3.48             ;
-+---------------------------------------------+------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 853       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 799       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 607       ;
+;     -- 5 input functions                    ; 64        ;
+;     -- 4 input functions                    ; 0         ;
+;     -- <=3 input functions                  ; 128       ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 992       ;
+;                                             ;           ;
+; I/O pins                                    ; 114       ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 992       ;
+; Total fan-out                               ; 8492      ;
+; Average fan-out                             ; 4.21      ;
++---------------------------------------------+-----------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -210,119 +213,124 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |ram                       ; 1344 (1344)         ; 32 (32)                   ; 0                 ; 0          ; 98   ; 0            ; |ram                ; ram         ; work         ;
+; |regfile                   ; 799 (799)           ; 992 (992)                 ; 0                 ; 0          ; 114  ; 0            ; |regfile            ; regfile     ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                  ;
-+-------------------------------------------------------+---------------------+------------------------+
-; Latch Name                                            ; Latch Enable Signal ; Free of Timing Hazards ;
-+-------------------------------------------------------+---------------------+------------------------+
-; memory~160                                            ; rtl~0               ; yes                    ;
-; memory~224                                            ; rtl~1               ; yes                    ;
-; memory~128                                            ; rtl~2               ; yes                    ;
-; memory~192                                            ; rtl~3               ; yes                    ;
-; memory~416                                            ; rtl~4               ; yes                    ;
-; memory~480                                            ; rtl~5               ; yes                    ;
-; memory~384                                            ; rtl~6               ; yes                    ;
-; memory~448                                            ; rtl~7               ; yes                    ;
-; memory~672                                            ; rtl~8               ; yes                    ;
-; memory~736                                            ; rtl~9               ; yes                    ;
-; memory~640                                            ; rtl~10              ; yes                    ;
-; memory~704                                            ; rtl~11              ; yes                    ;
-; memory~928                                            ; rtl~12              ; yes                    ;
-; memory~992                                            ; rtl~13              ; yes                    ;
-; memory~896                                            ; rtl~14              ; yes                    ;
-; memory~960                                            ; rtl~15              ; yes                    ;
-; memory~161                                            ; rtl~0               ; yes                    ;
-; memory~225                                            ; rtl~1               ; yes                    ;
-; memory~129                                            ; rtl~2               ; yes                    ;
-; memory~193                                            ; rtl~3               ; yes                    ;
-; memory~417                                            ; rtl~4               ; yes                    ;
-; memory~481                                            ; rtl~5               ; yes                    ;
-; memory~385                                            ; rtl~6               ; yes                    ;
-; memory~449                                            ; rtl~7               ; yes                    ;
-; memory~673                                            ; rtl~8               ; yes                    ;
-; memory~737                                            ; rtl~9               ; yes                    ;
-; memory~641                                            ; rtl~10              ; yes                    ;
-; memory~705                                            ; rtl~11              ; yes                    ;
-; memory~929                                            ; rtl~12              ; yes                    ;
-; memory~993                                            ; rtl~13              ; yes                    ;
-; memory~897                                            ; rtl~14              ; yes                    ;
-; memory~961                                            ; rtl~15              ; yes                    ;
-; memory~162                                            ; rtl~0               ; yes                    ;
-; memory~226                                            ; rtl~1               ; yes                    ;
-; memory~130                                            ; rtl~2               ; yes                    ;
-; memory~194                                            ; rtl~3               ; yes                    ;
-; memory~418                                            ; rtl~4               ; yes                    ;
-; memory~482                                            ; rtl~5               ; yes                    ;
-; memory~386                                            ; rtl~6               ; yes                    ;
-; memory~450                                            ; rtl~7               ; yes                    ;
-; memory~674                                            ; rtl~8               ; yes                    ;
-; memory~738                                            ; rtl~9               ; yes                    ;
-; memory~642                                            ; rtl~10              ; yes                    ;
-; memory~706                                            ; rtl~11              ; yes                    ;
-; memory~930                                            ; rtl~12              ; yes                    ;
-; memory~994                                            ; rtl~13              ; yes                    ;
-; memory~898                                            ; rtl~14              ; yes                    ;
-; memory~962                                            ; rtl~15              ; yes                    ;
-; memory~163                                            ; rtl~0               ; yes                    ;
-; memory~227                                            ; rtl~1               ; yes                    ;
-; memory~131                                            ; rtl~2               ; yes                    ;
-; memory~195                                            ; rtl~3               ; yes                    ;
-; memory~419                                            ; rtl~4               ; yes                    ;
-; memory~483                                            ; rtl~5               ; yes                    ;
-; memory~387                                            ; rtl~6               ; yes                    ;
-; memory~451                                            ; rtl~7               ; yes                    ;
-; memory~675                                            ; rtl~8               ; yes                    ;
-; memory~739                                            ; rtl~9               ; yes                    ;
-; memory~643                                            ; rtl~10              ; yes                    ;
-; memory~707                                            ; rtl~11              ; yes                    ;
-; memory~931                                            ; rtl~12              ; yes                    ;
-; memory~995                                            ; rtl~13              ; yes                    ;
-; memory~899                                            ; rtl~14              ; yes                    ;
-; memory~963                                            ; rtl~15              ; yes                    ;
-; memory~164                                            ; rtl~0               ; yes                    ;
-; memory~228                                            ; rtl~1               ; yes                    ;
-; memory~132                                            ; rtl~2               ; yes                    ;
-; memory~196                                            ; rtl~3               ; yes                    ;
-; memory~420                                            ; rtl~4               ; yes                    ;
-; memory~484                                            ; rtl~5               ; yes                    ;
-; memory~388                                            ; rtl~6               ; yes                    ;
-; memory~452                                            ; rtl~7               ; yes                    ;
-; memory~676                                            ; rtl~8               ; yes                    ;
-; memory~740                                            ; rtl~9               ; yes                    ;
-; memory~644                                            ; rtl~10              ; yes                    ;
-; memory~708                                            ; rtl~11              ; yes                    ;
-; memory~932                                            ; rtl~12              ; yes                    ;
-; memory~996                                            ; rtl~13              ; yes                    ;
-; memory~900                                            ; rtl~14              ; yes                    ;
-; memory~964                                            ; rtl~15              ; yes                    ;
-; memory~165                                            ; rtl~0               ; yes                    ;
-; memory~229                                            ; rtl~1               ; yes                    ;
-; memory~133                                            ; rtl~2               ; yes                    ;
-; memory~197                                            ; rtl~3               ; yes                    ;
-; memory~421                                            ; rtl~4               ; yes                    ;
-; memory~485                                            ; rtl~5               ; yes                    ;
-; memory~389                                            ; rtl~6               ; yes                    ;
-; memory~453                                            ; rtl~7               ; yes                    ;
-; memory~677                                            ; rtl~8               ; yes                    ;
-; memory~741                                            ; rtl~9               ; yes                    ;
-; memory~645                                            ; rtl~10              ; yes                    ;
-; memory~709                                            ; rtl~11              ; yes                    ;
-; memory~933                                            ; rtl~12              ; yes                    ;
-; memory~997                                            ; rtl~13              ; yes                    ;
-; memory~901                                            ; rtl~14              ; yes                    ;
-; memory~965                                            ; rtl~15              ; yes                    ;
-; memory~166                                            ; rtl~0               ; yes                    ;
-; memory~230                                            ; rtl~1               ; yes                    ;
-; memory~134                                            ; rtl~2               ; yes                    ;
-; memory~198                                            ; rtl~3               ; yes                    ;
-; Number of user-specified and inferred latches = 1024  ;                     ;                        ;
-+-------------------------------------------------------+---------------------+------------------------+
-Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; ReadData1[0]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData1[1]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData1[2]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData1[3]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData1[4]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData1[5]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData1[6]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData1[7]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData1[8]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData1[9]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData1[10]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[11]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[12]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[13]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[14]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[15]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[16]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[17]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[18]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[19]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[20]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[21]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[22]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[23]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[24]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[25]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[26]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[27]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[28]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[29]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[30]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData1[31]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[0]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData2[1]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData2[2]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData2[3]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData2[4]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData2[5]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData2[6]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData2[7]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData2[8]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData2[9]$latch                                  ; RegWrite            ; yes                    ;
+; ReadData2[10]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[11]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[12]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[13]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[14]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[15]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[16]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[17]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[18]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[19]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[20]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[21]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[22]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[23]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[24]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[25]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[26]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[27]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[28]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[29]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[30]$latch                                 ; RegWrite            ; yes                    ;
+; ReadData2[31]$latch                                 ; RegWrite            ; yes                    ;
+; Number of user-specified and inferred latches = 64  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                   ;
++----------------------------------------+---------------------------------------------+
+; Register name                          ; Reason for Removal                          ;
++----------------------------------------+---------------------------------------------+
+; regMem[0][0]                           ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][1]                           ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][2]                           ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][3]                           ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][4]                           ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][5]                           ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][6]                           ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][7]                           ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][8]                           ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][9]                           ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][10]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][11]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][12]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][13]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][14]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][15]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][16]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][17]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][18]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][19]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][20]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][21]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][22]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][23]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][24]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][25]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][26]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][27]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][28]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][29]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][30]                          ; Stuck at GND due to stuck port clock_enable ;
+; regMem[0][31]                          ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 32 ;                                             ;
++----------------------------------------+---------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -330,24 +338,24 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 32    ;
+; Total registers                              ; 992   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 992   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Clock Enable       ; 992   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |ram ;
-+----------------+-------+--------------------------------------------+
-; Parameter Name ; Value ; Type                                       ;
-+----------------+-------+--------------------------------------------+
-; mem_size       ; 32    ; Signed Integer                             ;
-+----------------+-------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |regfile|Mux31             ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |regfile|Mux63             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
 +-----------------------------------------------------+
@@ -355,18 +363,17 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 32                          ;
-;     ENA               ; 32                          ;
-; arriav_lcell_comb     ; 1344                        ;
-;     extend            ; 256                         ;
-;         7 data inputs ; 256                         ;
-;     normal            ; 1088                        ;
-;         3 data inputs ; 1024                        ;
-;         6 data inputs ; 64                          ;
-; boundary_port         ; 98                          ;
+; arriav_ff             ; 992                         ;
+;     ENA CLR           ; 992                         ;
+; arriav_lcell_comb     ; 799                         ;
+;     normal            ; 799                         ;
+;         3 data inputs ; 128                         ;
+;         5 data inputs ; 64                          ;
+;         6 data inputs ; 607                         ;
+; boundary_port         ; 114                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.29                        ;
+; Max LUT depth         ; 4.00                        ;
+; Average LUT depth     ; 3.77                        ;
 +-----------------------+-----------------------------+
 
 
@@ -375,7 +382,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -384,55 +391,97 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sat Sep 02 15:06:36 2023
+    Info: Version 22.1std.2 Build 922 07/20/2023 SC Lite Edition
+    Info: Processing started: Sat Sep  2 15:52:43 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processador -c Processador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file ram.v
-    Info (12023): Found entity 1: ram File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file rom.v
-    Info (12023): Found entity 1: rom File: D:/Rural/arquitetura_mips_sadge/Processador/rom.v Line: 1
-Info (12127): Elaborating entity "ram" for the top level hierarchy
+Info (12021): Found 1 design units, including 1 entities, in source file data_mem.v
+    Info (12023): Found entity 1: ram File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file instruction_mem.v
+    Info (12023): Found entity 1: rom File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction_mem.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file regfile.v
+    Info (12023): Found entity 1: regfile File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 1
+Info (12127): Elaborating entity "regfile" for the top level hierarchy
+Warning (10855): Verilog HDL warning at regfile.v(15): initial value for variable regMem should be constant File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 15
+Warning (10240): Verilog HDL Always Construct warning at regfile.v(21): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 21
+Warning (10240): Verilog HDL Always Construct warning at regfile.v(38): inferring latch(es) for variable "ReadData1", which holds its previous value in one or more paths through the always construct File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Warning (10240): Verilog HDL Always Construct warning at regfile.v(38): inferring latch(es) for variable "ReadData2", which holds its previous value in one or more paths through the always construct File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[0]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[1]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[2]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[3]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[4]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[5]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[6]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[7]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[8]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[9]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[10]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[11]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[12]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[13]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[14]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[15]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[16]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[17]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[18]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[19]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[20]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[21]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[22]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[23]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[24]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[25]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[26]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[27]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[28]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[29]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[30]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData2[31]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[0]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[1]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[2]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[3]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[4]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[5]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[6]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[7]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[8]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[9]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[10]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[11]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[12]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[13]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[14]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[15]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[16]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[17]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[18]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[19]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[20]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[21]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[22]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[23]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[24]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[25]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[26]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[27]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[28]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[29]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[30]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
+Info (10041): Inferred latch for "ReadData1[31]" at regfile.v(38) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 38
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 27 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "address[5]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[6]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[7]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[8]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[9]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[10]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[11]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[12]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[13]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[14]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[15]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[16]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[17]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[18]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[19]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[20]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[21]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[22]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[23]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[24]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[25]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[26]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[27]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[28]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[29]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[30]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-    Warning (15610): No output dependent on input pin "address[31]" File: D:/Rural/arquitetura_mips_sadge/Processador/ram.v Line: 6
-Info (21057): Implemented 1442 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 66 input pins
-    Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 1344 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 4828 megabytes
-    Info: Processing ended: Sat Sep 02 15:06:45 2023
-    Info: Elapsed time: 00:00:09
-    Info: Total CPU time (on all processors): 00:00:10
+Info (21057): Implemented 1905 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 50 input pins
+    Info (21059): Implemented 64 output pins
+    Info (21061): Implemented 1791 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4849 megabytes
+    Info: Processing ended: Sat Sep  2 15:52:54 2023
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:11
 
 

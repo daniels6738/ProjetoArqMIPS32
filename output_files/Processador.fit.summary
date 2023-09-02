@@ -1,13 +1,13 @@
-Fitter Status : Successful - Sat Sep 02 15:08:02 2023
-Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+Fitter Status : Successful - Sat Sep  2 15:54:32 2023
+Quartus Prime Version : 22.1std.2 Build 922 07/20/2023 SC Lite Edition
 Revision Name : Processador
-Top-level Entity Name : ram
+Top-level Entity Name : regfile
 Family : Cyclone V
 Device : 5CGXFC7C7F23C8
 Timing Models : Final
-Logic utilization (in ALMs) : 819 / 56,480 ( 1 % )
-Total registers : 32
-Total pins : 98 / 268 ( 37 % )
+Logic utilization (in ALMs) : 785 / 56,480 ( 1 % )
+Total registers : 992
+Total pins : 114 / 268 ( 43 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 7,024,640 ( 0 % )
 Total RAM Blocks : 0 / 686 ( 0 % )
