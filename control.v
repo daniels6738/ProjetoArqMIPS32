@@ -11,6 +11,7 @@ output reg o_reg_dst;
 output reg o_reg_write;
 
 always @(i_opcode) begin
+	
 	o_reg_write = 1'bx;
 	o_reg_dst = 1'bx;
 	o_alu_src = 1'bx;
@@ -22,7 +23,7 @@ always @(i_opcode) begin
 	//o_alu_op = 2'bxx;
 
 	casez(i_opcode)
-		6'b000000:	// Instrucoes R: ADD, SUB, AND, OR, SLT, XOR, NOR, [Added]: SLL, SRL, SRA, ROR, ROL
+		6'b000000:	//Instrucoes R: ADD, SUB, AND, OR, SLT, XOR, NOR, [Added]: SLL, SRL, SRA, ROR, ROL
 			begin
 				o_reg_write = 1'b1;	
 				o_reg_dst = 1'b1;
@@ -32,7 +33,7 @@ always @(i_opcode) begin
 				o_mem_write = 1'b0;
 				o_memto_reg = 1'b0;
 				o_jump = 1'b0;
-				//o_alu_op = 2'b10;
+				//o_alu_op = 2'b10;	
 			end
 		6'b100011:				// LW
 			begin
@@ -92,17 +93,17 @@ always @(i_opcode) begin
 				o_mem_write = 1'b0;
 				o_memto_reg = 1'b0;
 				o_jump = 1'b0;
-				//o_alu_op = 2'b00;
+				//o_alu_op = 2'b00;	
 			end
 		6'b001010:				// SLTI
 			begin
-				o_reg_write = 1'b1;
-				o_reg_dst = 1'b0;
+				o_reg_write = 1'b1;	
+				o_reg_dst = 1'b0;	
 				o_alu_src = 1'b1;
-				o_branch_beq = 1'b0;
+				o_branch_beq = 1'b0;	
 				o_branch_bne = 1'b0;
-				o_mem_write = 1'b0;
-				o_memto_reg = 1'b0;
+				o_mem_write = 1'b0;	
+				o_memto_reg = 1'b0;	
 				o_jump = 1'b0;
 			end
 		6'b001100:				// ANDI
@@ -117,6 +118,7 @@ always @(i_opcode) begin
 				o_jump = 1'b0;
 			end
 		6'b001101:				// ORI
+			begin
 				o_reg_write = 1'b1;
 				o_reg_dst = 1'b0;
 				o_alu_src = 1'b1;
