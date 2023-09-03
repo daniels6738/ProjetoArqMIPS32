@@ -1,0 +1,21 @@
+module Top_Level(
+	 //RegistradorPC
+	 input wire [31:0] A, // Entrada para o novo valor do PC
+    input wire Clk,     // Sinal de clock
+    input wire Rst,     // Sinal de reset
+    output wire [31:0] Y, // Saída do valor atual do PC
+	 //PC_Soma4
+	 input wire [31:0] Soma4_A, // Entrada para o novo valor do PC
+    output wire [31:0] Soma4_Y, // Saída do valor atual do PC
+	 //PC_SomaDesvio
+	 input [31:0] pcAtual,     // Valor atual do contador de programa
+	 input [31:0] valorDesvio, // Valor de desvio
+    output reg [31:0] novoPC  // Novo valor do contador de programa
+	 
+);
+`include "RegistradorPC.v"
+`include "PC_Soma4.v"
+`include "PC_SomaDesvio.v"
+
+
+endmodule 
