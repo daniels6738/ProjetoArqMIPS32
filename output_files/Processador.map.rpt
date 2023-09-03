@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Processador
-Sun Sep 03 11:56:23 2023
+Sun Sep 03 13:41:44 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,7 +10,16 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Parameter Settings for User Entity Instance: i_mem:u_i_mem
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -34,22 +43,27 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Sun Sep 03 11:56:23 2023           ;
-; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name               ; Processador                                 ;
-; Top-level Entity Name       ; Top_Level                                   ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sun Sep 03 13:41:44 2023       ;
+; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                   ; Processador                                 ;
+; Top-level Entity Name           ; Top_Level                                   ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 30                                          ;
+; Total pins                      ; 208                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -148,11 +162,1257 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                          ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                            ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------+---------+
+; i_mem.v                          ; yes             ; User Verilog HDL File  ; D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/i_mem.v         ;         ;
+; control.v                        ; yes             ; User Verilog HDL File  ; D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/control.v       ;         ;
+; regfile.v                        ; yes             ; User Verilog HDL File  ; D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v       ;         ;
+; Mux2x1_5bits.v                   ; yes             ; User Verilog HDL File  ; D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Mux2x1_5bits.v  ;         ;
+; RegistradorPC.v                  ; yes             ; User Verilog HDL File  ; D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/RegistradorPC.v ;         ;
+; PC_Soma4.v                       ; yes             ; User Verilog HDL File  ; D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/PC_Soma4.v      ;         ;
+; Top_Level.v                      ; yes             ; User Verilog HDL File  ; D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v     ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 19        ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 38        ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 0         ;
+;     -- 5 input functions                    ; 0         ;
+;     -- 4 input functions                    ; 0         ;
+;     -- <=3 input functions                  ; 38        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 30        ;
+;                                             ;           ;
+; I/O pins                                    ; 208       ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; Clk~input ;
+; Maximum fan-out                             ; 30        ;
+; Total fan-out                               ; 452       ;
+; Average fan-out                             ; 0.93      ;
++---------------------------------------------+-----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                   ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                      ; Entity Name   ; Library Name ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------+--------------+
+; |Top_Level                         ; 38 (0)              ; 30 (0)                    ; 0                 ; 0          ; 208  ; 0            ; |Top_Level                               ; Top_Level     ; work         ;
+;    |Mux2x1_5bits:u_Mux2x1_5bits|   ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Level|Mux2x1_5bits:u_Mux2x1_5bits   ; Mux2x1_5bits  ; work         ;
+;    |PC_Soma4:u_PC_Soma4|           ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Level|PC_Soma4:u_PC_Soma4           ; PC_Soma4      ; work         ;
+;    |RegistradorPC:u_RegistradorPC| ; 0 (0)               ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |Top_Level|RegistradorPC:u_RegistradorPC ; RegistradorPC ; work         ;
+;    |i_mem:u_i_mem|                 ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |Top_Level|i_mem:u_i_mem                 ; i_mem         ; work         ;
++------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------+---------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                             ;
++------------------------------------------+-----------------------------------------------------+
+; Register name                            ; Reason for Removal                                  ;
++------------------------------------------+-----------------------------------------------------+
+; RegistradorPC:u_RegistradorPC|pc_reg[1]  ; Merged with RegistradorPC:u_RegistradorPC|pc_reg[0] ;
+; RegistradorPC:u_RegistradorPC|pc_reg[0]  ; Stuck at GND due to stuck port data_in              ;
+; regfile:u_regfile|regMem[2][31]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][31]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][31]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][31]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][31]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][31]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][31]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][30]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][30]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][30]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][30]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][30]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][30]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][30]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][29]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][29]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][29]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][29]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][29]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][29]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][29]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][28]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][28]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][28]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][28]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][28]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][28]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][28]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][27]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][27]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][27]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][27]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][27]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][27]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][27]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][26]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][26]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][26]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][26]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][26]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][26]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][26]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][25]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][25]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][25]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][25]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][25]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][25]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][25]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][24]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][24]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][24]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][24]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][24]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][24]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][24]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][23]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][23]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][23]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][23]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][23]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][23]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][23]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][22]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][22]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][22]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][22]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][22]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][22]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][22]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][21]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][21]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][21]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][21]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][21]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][21]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][21]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][20]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][20]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][20]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][20]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][20]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][20]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][20]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][19]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][19]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][19]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][19]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][19]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][19]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][19]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][18]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][18]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][18]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][18]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][18]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][18]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][18]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][17]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][17]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][17]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][17]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][17]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][17]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][17]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][16]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][16]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][16]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][16]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][16]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][16]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][16]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][15]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][15]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][15]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][15]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][15]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][15]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][15]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][14]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][14]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][14]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][14]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][14]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][14]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][14]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][13]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][13]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][13]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][13]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][13]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][13]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][13]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][12]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][12]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][12]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][12]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][12]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][12]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][12]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][11]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][11]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][11]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][11]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][11]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][11]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][11]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][10]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][10]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][10]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][10]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][10]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][10]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][10]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][9]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][9]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][9]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][9]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][9]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][9]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][9]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][8]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][8]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][8]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][8]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][8]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][8]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][8]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][7]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][7]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][7]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][7]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][7]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][7]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][7]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][6]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][6]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][6]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][6]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][6]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][6]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][6]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][5]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][5]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][5]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][5]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][5]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][5]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][5]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][4]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][4]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][4]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][4]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][4]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][4]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][4]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][3]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][3]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][3]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][3]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][3]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][3]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][3]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][2]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][2]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][2]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][2]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][2]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][2]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][2]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][1]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][1]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][1]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][1]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][1]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][1]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][1]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[2][0]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[3][0]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[4][0]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[5][0]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[6][0]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[7][0]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[9][0]           ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[10][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[11][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[12][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[13][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[18][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[19][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[20][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[21][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[22][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[24][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[25][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[26][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[27][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[28][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[29][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[8][31]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][30]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][29]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][28]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][27]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][26]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][25]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][24]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][23]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][22]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][21]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][20]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][19]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][18]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][17]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][16]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][15]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][14]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][13]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][12]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][11]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][10]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][9]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][8]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][7]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][6]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][5]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][4]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][3]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][2]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][1]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[8][0]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][31]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][30]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][29]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][28]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][27]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][26]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][25]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][24]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][23]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][22]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][21]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][20]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][19]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][18]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][17]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][16]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][15]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][14]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][13]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][12]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][11]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][10]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][9]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][8]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][7]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][6]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][5]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][4]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][3]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][2]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][1]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[23][0]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[31][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[31][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][0]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][1]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][2]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][3]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][4]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][5]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][6]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][7]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][8]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][9]          ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][10]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][11]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][12]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][13]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][14]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][15]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][16]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][17]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][18]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][19]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][20]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][21]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][22]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][23]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][24]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][25]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][26]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][27]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][28]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][29]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][30]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[14][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[15][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[30][31]         ; Lost fanout                                         ;
+; regfile:u_regfile|regMem[17][0]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][1]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][2]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][3]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][4]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][5]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][6]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][7]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][8]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][9]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][10]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][11]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][12]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][13]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][14]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][15]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][16]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][17]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][18]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][19]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][20]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][21]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][22]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][23]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][24]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][25]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][26]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][27]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][28]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][29]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][30]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[17][31]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][0]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][0]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][1]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][1]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][2]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][2]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][3]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][3]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][4]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][4]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][5]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][5]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][6]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][6]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][7]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][7]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][8]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][8]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][9]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][9]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][10]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][10]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][11]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][11]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][12]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][12]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][13]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][13]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][14]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][14]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][15]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][15]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][16]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][16]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][17]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][17]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][18]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][18]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][19]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][19]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][20]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][20]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][21]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][21]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][22]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][22]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][23]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][23]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][24]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][24]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][25]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][25]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][26]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][26]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][27]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][27]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][28]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][28]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][29]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][29]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][30]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][30]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[1][31]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[16][31]         ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][0]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][1]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][2]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][3]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][4]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][5]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][6]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][7]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][8]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][9]           ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][10]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][11]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][12]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][13]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][14]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][15]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][16]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][17]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][18]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][19]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][20]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][21]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][22]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][23]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][24]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][25]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][26]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][27]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][28]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][29]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][30]          ; Stuck at GND due to stuck port clock_enable         ;
+; regfile:u_regfile|regMem[0][31]          ; Stuck at GND due to stuck port clock_enable         ;
+; Total Number of Removed Registers = 1026 ;                                                     ;
++------------------------------------------+-----------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                  ;
++-----------------------------------------+--------------------------------+-------------------------------------------------------------------+
+; Register name                           ; Reason for Removal             ; Registers Removed due to This Register                            ;
++-----------------------------------------+--------------------------------+-------------------------------------------------------------------+
+; RegistradorPC:u_RegistradorPC|pc_reg[0] ; Stuck at GND                   ; regfile:u_regfile|regMem[2][31], regfile:u_regfile|regMem[2][30], ;
+;                                         ; due to stuck port data_in      ; regfile:u_regfile|regMem[2][29], regfile:u_regfile|regMem[2][28], ;
+;                                         ;                                ; regfile:u_regfile|regMem[2][27], regfile:u_regfile|regMem[2][26], ;
+;                                         ;                                ; regfile:u_regfile|regMem[2][25], regfile:u_regfile|regMem[2][24], ;
+;                                         ;                                ; regfile:u_regfile|regMem[2][23], regfile:u_regfile|regMem[2][22], ;
+;                                         ;                                ; regfile:u_regfile|regMem[2][21], regfile:u_regfile|regMem[2][20], ;
+;                                         ;                                ; regfile:u_regfile|regMem[2][19], regfile:u_regfile|regMem[2][18], ;
+;                                         ;                                ; regfile:u_regfile|regMem[2][17], regfile:u_regfile|regMem[2][16], ;
+;                                         ;                                ; regfile:u_regfile|regMem[2][15], regfile:u_regfile|regMem[2][14], ;
+;                                         ;                                ; regfile:u_regfile|regMem[2][13], regfile:u_regfile|regMem[2][12], ;
+;                                         ;                                ; regfile:u_regfile|regMem[2][11], regfile:u_regfile|regMem[2][10], ;
+;                                         ;                                ; regfile:u_regfile|regMem[2][9], regfile:u_regfile|regMem[2][8],   ;
+;                                         ;                                ; regfile:u_regfile|regMem[2][7], regfile:u_regfile|regMem[2][6],   ;
+;                                         ;                                ; regfile:u_regfile|regMem[2][5], regfile:u_regfile|regMem[2][4],   ;
+;                                         ;                                ; regfile:u_regfile|regMem[2][3], regfile:u_regfile|regMem[2][2],   ;
+;                                         ;                                ; regfile:u_regfile|regMem[2][1], regfile:u_regfile|regMem[2][0],   ;
+;                                         ;                                ; regfile:u_regfile|regMem[1][1], regfile:u_regfile|regMem[1][2],   ;
+;                                         ;                                ; regfile:u_regfile|regMem[1][3], regfile:u_regfile|regMem[1][5],   ;
+;                                         ;                                ; regfile:u_regfile|regMem[1][6], regfile:u_regfile|regMem[1][7],   ;
+;                                         ;                                ; regfile:u_regfile|regMem[1][8], regfile:u_regfile|regMem[1][9],   ;
+;                                         ;                                ; regfile:u_regfile|regMem[1][10], regfile:u_regfile|regMem[1][11], ;
+;                                         ;                                ; regfile:u_regfile|regMem[1][12], regfile:u_regfile|regMem[1][13], ;
+;                                         ;                                ; regfile:u_regfile|regMem[1][14], regfile:u_regfile|regMem[1][15], ;
+;                                         ;                                ; regfile:u_regfile|regMem[1][16], regfile:u_regfile|regMem[0][14], ;
+;                                         ;                                ; regfile:u_regfile|regMem[0][15]                                   ;
+; regfile:u_regfile|regMem[8][31]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][31]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][30]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][30]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][29]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][29]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][28]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][28]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][27]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][27]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][26]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][26]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][25]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][25]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][24]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][24]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][23]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][23]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][22]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][22]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][21]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][21]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][20]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][20]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][19]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][19]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][18]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][18]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][17]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][17]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][16]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][16]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][15]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][15]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][14]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][14]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][13]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][13]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][12]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][12]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][11]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][11]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][10]         ; Stuck at GND                   ; regfile:u_regfile|regMem[31][10]                                  ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][9]          ; Stuck at GND                   ; regfile:u_regfile|regMem[31][9]                                   ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][8]          ; Stuck at GND                   ; regfile:u_regfile|regMem[31][8]                                   ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][7]          ; Stuck at GND                   ; regfile:u_regfile|regMem[31][7]                                   ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][6]          ; Stuck at GND                   ; regfile:u_regfile|regMem[31][6]                                   ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][5]          ; Stuck at GND                   ; regfile:u_regfile|regMem[31][5]                                   ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][4]          ; Stuck at GND                   ; regfile:u_regfile|regMem[31][4]                                   ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][3]          ; Stuck at GND                   ; regfile:u_regfile|regMem[31][3]                                   ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][2]          ; Stuck at GND                   ; regfile:u_regfile|regMem[31][2]                                   ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][1]          ; Stuck at GND                   ; regfile:u_regfile|regMem[31][1]                                   ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
+; regfile:u_regfile|regMem[8][0]          ; Stuck at GND                   ; regfile:u_regfile|regMem[31][0]                                   ;
+;                                         ; due to stuck port clock_enable ;                                                                   ;
++-----------------------------------------+--------------------------------+-------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 30    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 30    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: i_mem:u_i_mem ;
++----------------+------------------+------------------------+
+; Parameter Name ; Value            ; Type                   ;
++----------------+------------------+------------------------+
+; MEM_DEPTH      ; 32               ; Signed Integer         ;
+; MEM_FILE       ; instruction.list ; String                 ;
++----------------+------------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 30                          ;
+;     CLR               ; 30                          ;
+; arriav_lcell_comb     ; 41                          ;
+;     arith             ; 30                          ;
+;         1 data inputs ; 30                          ;
+;     normal            ; 11                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 2                           ;
+;         3 data inputs ; 6                           ;
+; boundary_port         ; 208                         ;
+;                       ;                             ;
+; Max LUT depth         ; 3.90                        ;
+; Average LUT depth     ; 2.69                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -161,18 +1421,16 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Sep 03 11:56:15 2023
+    Info: Processing started: Sun Sep 03 13:41:35 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processador -c Processador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Error (10170): Verilog HDL syntax error at control.v(121) near text: "=". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/control.v Line: 121
-Error (10170): Verilog HDL syntax error at control.v(165) near text: "end"; "end" without "begin" . Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/control.v Line: 165
-Error (10170): Verilog HDL syntax error at control.v(166) near text: "endmodule";  expecting "end". Check for and fix any syntax errors that appear immediately before or at the specified keyword. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/control.v Line: 166
-Info (12021): Found 0 design units, including 0 entities, in source file control.v
+Info (12021): Found 1 design units, including 1 entities, in source file i_mem.v
+    Info (12023): Found entity 1: i_mem File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/i_mem.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file control.v
+    Info (12023): Found entity 1: control File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/control.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file data_mem.v
     Info (12023): Found entity 1: data_mem File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file instruction_mem.v
-    Info (12023): Found entity 1: instruction_mem File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction_mem.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file regfile.v
     Info (12023): Found entity 1: regfile File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file extensorsinal.v
@@ -189,12 +1447,203 @@ Info (12021): Found 1 design units, including 1 entities, in source file pc_soma
     Info (12023): Found entity 1: PC_SomaDesvio File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/PC_SomaDesvio.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ula.v
     Info (12023): Found entity 1: ULA File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at Top_Level.v(77): ignored dangling comma in List of Port Connections File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 77
 Info (12021): Found 1 design units, including 1 entities, in source file top_level.v
     Info (12023): Found entity 1: Top_Level File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 1
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 3 errors, 1 warning
-    Error: Peak virtual memory: 4769 megabytes
-    Error: Processing ended: Sun Sep 03 11:56:23 2023
-    Error: Elapsed time: 00:00:08
-    Error: Total CPU time (on all processors): 00:00:09
+Info (12127): Elaborating entity "Top_Level" for the top level hierarchy
+Info (12128): Elaborating entity "PC_Soma4" for hierarchy "PC_Soma4:u_PC_Soma4" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 46
+Info (12128): Elaborating entity "RegistradorPC" for hierarchy "RegistradorPC:u_RegistradorPC" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 53
+Info (12128): Elaborating entity "i_mem" for hierarchy "i_mem:u_i_mem" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 58
+Warning (10850): Verilog HDL warning at i_mem.v(12): number of words (62) in memory file does not match the number of elements in the address range [0:31] File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/i_mem.v Line: 12
+Warning (10230): Verilog HDL assignment warning at instruction.list(1): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 1
+Warning (10230): Verilog HDL assignment warning at instruction.list(2): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 2
+Warning (10230): Verilog HDL assignment warning at instruction.list(3): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 3
+Warning (10230): Verilog HDL assignment warning at instruction.list(4): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 4
+Warning (10230): Verilog HDL assignment warning at instruction.list(5): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 5
+Warning (10230): Verilog HDL assignment warning at instruction.list(6): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 6
+Warning (10230): Verilog HDL assignment warning at instruction.list(7): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 7
+Warning (10230): Verilog HDL assignment warning at instruction.list(8): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 8
+Warning (10230): Verilog HDL assignment warning at instruction.list(9): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 9
+Warning (10230): Verilog HDL assignment warning at instruction.list(10): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 10
+Warning (10230): Verilog HDL assignment warning at instruction.list(11): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 11
+Warning (10230): Verilog HDL assignment warning at instruction.list(12): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 12
+Warning (10230): Verilog HDL assignment warning at instruction.list(13): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 13
+Warning (10230): Verilog HDL assignment warning at instruction.list(14): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 14
+Warning (10230): Verilog HDL assignment warning at instruction.list(15): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 15
+Warning (10230): Verilog HDL assignment warning at instruction.list(16): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 16
+Warning (10230): Verilog HDL assignment warning at instruction.list(17): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 17
+Warning (10230): Verilog HDL assignment warning at instruction.list(18): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 18
+Warning (10230): Verilog HDL assignment warning at instruction.list(19): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 19
+Warning (10230): Verilog HDL assignment warning at instruction.list(20): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 20
+Warning (10230): Verilog HDL assignment warning at instruction.list(21): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 21
+Warning (10230): Verilog HDL assignment warning at instruction.list(22): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 22
+Warning (10230): Verilog HDL assignment warning at instruction.list(23): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 23
+Warning (10230): Verilog HDL assignment warning at instruction.list(24): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 24
+Warning (10230): Verilog HDL assignment warning at instruction.list(25): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 25
+Warning (10230): Verilog HDL assignment warning at instruction.list(26): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 26
+Warning (10230): Verilog HDL assignment warning at instruction.list(27): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 27
+Warning (10230): Verilog HDL assignment warning at instruction.list(28): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 28
+Warning (10230): Verilog HDL assignment warning at instruction.list(29): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 29
+Warning (10230): Verilog HDL assignment warning at instruction.list(30): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 30
+Warning (10230): Verilog HDL assignment warning at instruction.list(31): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 31
+Warning (10230): Verilog HDL assignment warning at instruction.list(32): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 32
+Warning (10030): Net "mem.data_a" at i_mem.v(8) has no driver or initial value, using a default initial value '0' File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/i_mem.v Line: 8
+Warning (10030): Net "mem.waddr_a" at i_mem.v(8) has no driver or initial value, using a default initial value '0' File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/i_mem.v Line: 8
+Warning (10030): Net "mem.we_a" at i_mem.v(8) has no driver or initial value, using a default initial value '0' File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/i_mem.v Line: 8
+Info (12128): Elaborating entity "control" for hierarchy "control:u_control" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 70
+Info (12128): Elaborating entity "Mux2x1_5bits" for hierarchy "Mux2x1_5bits:u_Mux2x1_5bits" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 77
+Info (12128): Elaborating entity "regfile" for hierarchy "regfile:u_regfile" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 90
+Warning (10855): Verilog HDL warning at regfile.v(15): initial value for variable regMem should be constant File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 15
+Warning (10240): Verilog HDL Always Construct warning at regfile.v(21): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 21
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276004): RAM logic "i_mem:u_i_mem|mem" is uninferred due to inappropriate RAM size File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/i_mem.v Line: 8
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Y[0]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 6
+    Warning (13410): Pin "Y[1]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 6
+    Warning (13410): Pin "Soma4_Y[0]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 9
+    Warning (13410): Pin "Soma4_Y[1]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 9
+    Warning (13410): Pin "i_out[1]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[2]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[3]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[5]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[6]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[7]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[9]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[10]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[11]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[13]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[14]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[15]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[17]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[18]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[19]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[21]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[22]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[23]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[25]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[26]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[27]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[29]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[30]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "i_out[31]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 15
+    Warning (13410): Pin "o_mem_write" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 19
+    Warning (13410): Pin "o_branch_bne" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 21
+    Warning (13410): Pin "o_jump" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 22
+    Warning (13410): Pin "o_alu_src" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 23
+    Warning (13410): Pin "Mux_5bits_Y[0]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 30
+    Warning (13410): Pin "Mux_5bits_Y[2]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 30
+    Warning (13410): Pin "Mux_5bits_Y[3]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 30
+    Warning (13410): Pin "Mux_5bits_Y[4]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 30
+    Warning (13410): Pin "ReadData1[0]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[1]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[2]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[3]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[4]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[5]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[6]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[7]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[8]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[9]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[10]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[11]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[12]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[13]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[14]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[15]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[16]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[17]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[18]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[19]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[20]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[21]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[22]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[23]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[24]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[25]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[26]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[27]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[28]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[29]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[30]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData1[31]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 34
+    Warning (13410): Pin "ReadData2[0]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[1]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[2]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[3]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[4]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[5]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[6]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[7]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[8]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[9]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[10]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[11]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[12]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[13]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[14]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[15]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[16]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[17]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[18]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[19]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[20]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[21]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[22]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[23]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[24]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[25]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[26]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[27]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[28]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[29]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[30]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+    Warning (13410): Pin "ReadData2[31]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 35
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 832 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 33 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "WriteData[0]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "Reset" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 41
+    Warning (15610): No output dependent on input pin "WriteData[1]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[2]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[3]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[4]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[5]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[6]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[7]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[8]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[9]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[10]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[11]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[12]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[13]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[14]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[15]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[16]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[17]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[18]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[19]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[20]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[21]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[22]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[23]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[24]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[25]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[26]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[27]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[28]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[29]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[30]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+    Warning (15610): No output dependent on input pin "WriteData[31]" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 38
+Info (21057): Implemented 276 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 35 input pins
+    Info (21059): Implemented 173 output pins
+    Info (21061): Implemented 68 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 175 warnings
+    Info: Peak virtual memory: 4827 megabytes
+    Info: Processing ended: Sun Sep 03 13:41:44 2023
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:11
 
 

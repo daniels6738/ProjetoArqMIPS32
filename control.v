@@ -1,6 +1,6 @@
 module control(i_opcode, o_memto_reg, o_mem_write, o_branch_beq, o_branch_bne, o_jump, o_alu_src, o_reg_dst, o_reg_write);
 
-input [5:0] i_opcode;
+input wire [5:0] i_opcode;
 output reg o_memto_reg;
 output reg o_mem_write;
 output reg o_branch_beq;

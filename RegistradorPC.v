@@ -8,7 +8,7 @@ module RegistradorPC(
     reg [31:0] pc_reg; // Registrador para armazenar o valor do PC
 
     always @(posedge Clk or posedge Rst) begin
-        if (Rst==0)
+        if (Rst==1)
             pc_reg <= 0; // Reseta o valor do PC para 0 em caso de reset
         else
             pc_reg <= A; // Atualiza o valor do PC com a entrada A na borda de subida do clock
