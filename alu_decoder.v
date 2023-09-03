@@ -145,12 +145,12 @@ always @(*) begin
 				o_alu_control = 4'b0101;	// XOR
 		
 			end
-		6'b001011:	// STLIU   			
+		6'b001011:	// SLTIU   			
 			begin
-				o_alu_control = 4'b1100;	
+				o_alu_control = 4'b1010;	//SLTU
 			
 			end
-		6'b001111:	// lui   			
+		6'b001111:	// LUI   			
 			begin
 				o_alu_control = 4'b1111;	
 			
