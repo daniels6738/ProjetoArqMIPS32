@@ -1,8 +1,9 @@
-module control(i_opcode, o_memto_reg, o_mem_write, o_branch_beq, o_branch_bne, o_jump, o_alu_src, o_reg_dst, o_reg_write); //, o_alu_op
+module control(i_opcode, o_memto_reg, o_mem_write, o_mem_read, o_branch_beq, o_branch_bne, o_jump, o_alu_src, o_reg_dst, o_reg_write); //, o_alu_op
 
 input [5:0] i_opcode;
 output reg o_memto_reg;
 output reg o_mem_write;
+output reg o_mem_read;
 output reg o_branch_beq;
 output reg o_branch_bne;
 output reg o_jump;
@@ -19,6 +20,7 @@ always @(i_opcode) begin
 	o_branch_beq = 1'bx;
 	o_branch_bne = 1'bx;
 	o_mem_write = 1'bx;
+	o_mem_read = 1'bx;
 	o_memto_reg = 1'bx;
 	o_jump = 1'bx;
 	//o_alu_op = 4'bxxxx;
@@ -32,6 +34,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'b0;
 				o_branch_bne = 1'b0;
 				o_mem_write = 1'b0;
+				o_mem_read = 1'b0;
 				o_memto_reg = 1'b0;
 				o_jump = 1'b0;
 				//o_alu_op = 4'b0000;	
@@ -44,6 +47,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'b0;
 				o_branch_bne = 1'b0;
 				o_mem_write = 1'b0;
+				o_mem_read = 1'b1;
 				o_memto_reg = 1'b1;
 				o_jump = 1'b0;
 				//o_alu_op = 4'b0011;
@@ -56,6 +60,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'b0;
 				o_branch_bne = 1'b0;
 				o_mem_write = 1'b1;
+				o_mem_read = 1'b0;
 				o_memto_reg = 1'bx;
 				o_jump = 1'b0;
 				//o_alu_op = 2'b00;
@@ -68,6 +73,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'b1;
 				o_branch_bne = 1'b0;
 				o_mem_write = 1'b0;
+				o_mem_read = 1'b0;
 				o_memto_reg = 1'bx;
 				o_jump = 1'b0;
 				//o_alu_op = 2'b01;
@@ -80,6 +86,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'b0;
 				o_branch_bne = 1'b1;
 				o_mem_write = 1'b0;
+				o_mem_read = 1'b0;
 				o_memto_reg = 1'bx;
 				o_jump = 1'b0;
 				//o_alu_op = 2'b01;
@@ -92,6 +99,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'b0;
 				o_branch_bne = 1'b0;
 				o_mem_write = 1'b0;
+				o_mem_read = 1'b0;
 				o_memto_reg = 1'b0;
 				o_jump = 1'b0;
 				//o_alu_op = 2'b00;	
@@ -104,6 +112,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'b0;	
 				o_branch_bne = 1'b0;
 				o_mem_write = 1'b0;	
+				o_mem_read = 1'b0;
 				o_memto_reg = 1'b0;	
 				o_jump = 1'b0;
 			end
@@ -115,6 +124,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'b0;
 				o_branch_bne = 1'b0;
 				o_mem_write = 1'b0;
+				o_mem_read = 1'b0;
 				o_memto_reg = 1'b0;
 				o_jump = 1'b0;
 			end
@@ -126,6 +136,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'b0;
 				o_branch_bne = 1'b0;
 				o_mem_write = 1'b0;
+				o_mem_read = 1'b0;
 				o_memto_reg = 1'b0;
 				o_jump = 1'b0;
 			end
@@ -137,6 +148,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'b0;
 				o_branch_bne = 1'b0;
 				o_mem_write = 1'b0;
+				o_mem_read = 1'b0;
 				o_memto_reg = 1'b0;
 				o_jump = 1'b0;
 			end
@@ -148,6 +160,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'bx;
 				o_branch_bne = 1'bx;
 				o_mem_write = 1'b0;
+				o_mem_read = 1'b0;
 				o_memto_reg = 1'bx;
 				o_jump = 1'b1;
 				//o_alu_op = 2'bxx;
@@ -161,6 +174,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'b0;	
 				o_branch_bne = 1'b0;
 				o_mem_write = 1'b0;	
+				o_mem_read = 1'b0;
 				o_memto_reg = 1'b0;	
 				o_jump = 1'b0;
 			end
@@ -173,6 +187,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'b0;	
 				o_branch_bne = 1'b0;
 				o_mem_write = 1'b0;	
+				o_mem_read = 1'b0;
 				o_memto_reg = 1'b0;	
 				o_jump = 1'b0;
 			end
@@ -185,6 +200,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'bx;
 				o_branch_bne = 1'bx;
 				o_mem_write = 1'b0;
+				o_mem_read = 1'b0;
 				o_memto_reg = 1'bx;
 				o_jump = 1'b1;
 			end
@@ -197,6 +213,7 @@ always @(i_opcode) begin
 				o_branch_beq = 1'bx;
 				o_branch_bne = 1'bx;
 				o_mem_write = 1'bx;
+				o_mem_read = 1'b0;
 				o_memto_reg = 1'bx;
 				o_jump = 1'bx;
 				//o_alu_op = 2'bxx;	

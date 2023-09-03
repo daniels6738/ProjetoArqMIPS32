@@ -17,6 +17,7 @@ module Top_Level(
 	 //input wire [5:0] i_opcode,
 	 output wire o_memto_reg,
 	 output wire o_mem_write,
+	 output wire o_mem_read,
 	 output wire o_branch_beq,
 	 output wire o_branch_bne,
 	 output wire o_jump,
@@ -35,32 +36,57 @@ module Top_Level(
 	 output wire [31:0] ReadData2,
 	 //input wire clk, ja tem clk
 	 //input wire [4:0] WriteAddr,
-	 input wire [31:0] WriteData,
+	 //input wire [31:0] WriteData,
 	 //input wire RegWrite,
-	 input wire Reset
+	 input wire Reset,
+	 //alu_decoder
+	 //input [5:0] i_opcode,
+	 //input [5:0] i_funct,		
+	 output wire [3:0] o_alu_control,
+	 //ExtensorSinal
+	 //input [15:0] A_Ext,
+	 output wire [31:0]Y_Ext,
+	 //ULA
+	 //input [3:0] codigo_controle, // Entrada de código de controle
+	 //input [31:0] operando_A,     // Entrada do operando A
+    //input [31:0] operando_B,     // Entrada do operando B
+    output wire [31:0] resultado, // Saída do resultado
+    output wire zero_flag,      // Saída do flag de zero
+	 output wire Mux_5bits_Y_ULA,
+	 //data_mem
+	 //input wire [31:0] address,
+    //input wire [31:0] data_in,
+	 //input wire write_enable,
+    //input wire read_enable,
+    output wire [31:0] data_out,
+	 //pc soma desvio
+	 output wire [31:0] pc_desvio,
+	 //mux32bits para resultado do novo pc
+	 output wire [31:0] Mux2x1_32bits_Y_memOrUla
 );
 
-	PC_Soma4 u_PC_Soma4 (
+	PC_Soma4(
     .A(Y),
     .Y(Soma4_Y)
    );
   
-	RegistradorPC u_RegistradorPC (
-    .A(Soma4_Y),
+	RegistradorPC(
+    .A(Mux2x1_32bits_Y),
     .Clk(Clk),
     .Rst(Rst),
 	 .Y(Y)
    );
    
-	i_mem u_i_mem (
+	i_mem(
 	.address(Y),
 	.i_out(i_out)
 	);
 	
-	control u_control(
+	control(
 	.i_opcode(i_out[31:26]),
 	.o_memto_reg(o_memto_reg),
 	.o_mem_write(o_mem_write),
+	.o_mem_read(o_mem_read),
 	.o_branch_beq(o_branch_beq),
 	.o_branch_bne(o_branch_bne),
 	.o_jump(o_jump),
@@ -69,7 +95,7 @@ module Top_Level(
 	.o_reg_write(o_reg_write)
 	);
 	
-	Mux2x1_5bits u_Mux2x1_5bits(
+	Mux2x1_5bits Mux5Bits_para_regfile(
 	.A(i_out[20:16]),
 	.B(i_out[15:11]),
 	.S(o_reg_dst),
@@ -77,16 +103,72 @@ module Top_Level(
 	);
 	
 	
-	regfile u_regfile(
+	regfile(
 	.ReadAddr1(i_out[25:21]),
 	.ReadAddr2(i_out[20:16]),
 	.ReadData1(ReadData1),
 	.ReadData2(ReadData2),
 	.clk(Clk),
 	.WriteAddr(Mux_5bits_Y),
-	.WriteData(WriteData), //A ligar depois
+	.WriteData(Mux2x1_32bits_Y_memOrUla),
 	.RegWrite(o_reg_write),
 	.Reset(Reset)
 	);
+	
+	alu_decoder(
+	.i_opcode(i_out[31:26]),
+	.i_funct(i_out[5:0]),
+	.o_alu_control(o_alu_control)
+	);
+	
+	ExtensorSinal(
+	.A(i_out[15:0]),
+	.Y(Y_Ext)
+	);
+	
+	Mux2x1_5bits Mux5Bits_para_ULA(
+	.A(ReadData2),
+	.B(Y_Ext),
+	.S(o_alu_src),
+	.Y(Mux_5bits_Y_ULA),
+	);
+	
+	ULA(
+	.codigo_controle(o_alu_control),
+	.operando_A(ReadData1),
+	.operando_B(Mux_5bits_Y_ULA),
+	.resultado(resultado),
+	.zero_flag(zero_flag)
+	);
+	
+	data_mem(
+	.address(resultado),
+	.data_in(ReadData2),
+	.write_enable(o_mem_write),
+	.read_enable(o_mem_read),
+	.data_out(data_out)
+	);
+	
+	PC_SomaDesvio(
+	.pcAtual(Soma4_Y),
+	.valorDesvio(Y_Ext),
+	.novoPC(pc_desvio)
+	);
+	
+	Mux2x1_32bits MuxPC(
+	.A(Soma4_Y),
+	.B(pc_desvio),
+	.S((o_branch_beq | o_branch_bne) & zero_flag),
+	.Y(Mux2x1_32bits_Y),
+	);
+	
+	Mux2x1_32bits mem_or_ula(
+	.A(resultado),
+	.B(data_out),
+	.S(o_memto_reg),
+	.Y(Mux2x1_32bits_Y_memOrUla),
+	);
+	
+	
 
 endmodule 

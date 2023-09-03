@@ -1,44 +1,51 @@
 module ULA (
-    input wire [31:0] In1,
-    input wire [31:0] In2,
-    input wire [3:0] OP,
-    output reg [31:0] result,
-	 output wire zeroFlag
+  input [3:0] codigo_controle, // Entrada de código de controle
+  input [31:0] operando_A,     // Entrada do operando A
+  input [31:0] operando_B,     // Entrada do operando B
+  output reg [31:0] resultado, // Saída do resultado
+  output reg zero_flag      // Saída do flag de zero
+  
 );
 
-	 assign zeroFlag = (result == 0)? 32'b1:32'b0;
-    always @(*) begin
-        case (OP)
-				4'b0000: result = In1 + In2; // OP == 0000 -> add
-				
-				4'b0001: result = In1 - In2; // OP == 0001 -> sub
-				
-				4'b0010: result = In1 + In2; // OP == 0010 -> mult
-				
-				4'b0011: result = In1 / In2; // OP == 0011 -> div
-				
-				4'b0100: result = In1<<1; // OP == 0100 -> SLL
-				
-				4'b0101: result = In1>>1; // OP == 0101 -> SRL
-				
-				4'b0110: result = In1 & In2; // OP == 0110 -> AND
-				
-				4'b0111: result = In1 | In2; // OP == 0111 -> OR
-				
-				4'b1000: result = In1 ^ In2; // OP == 1000 -> XOR
-				
-				4'b1001: result = ~(In1 & In2); // OP == 1001 -> NAND
-				
-				4'b1010: result = ~(In1 | In2); // OP == 1010 -> NOR
-				
-				4'b1011: result = (In1 > In2 | In1 == In2)? 32'b0:32'b1; // OP == 1011 -> SLT
-				
-				4'b1100: result = (In1 < In2 | In1 == In2)? 32'b0:32'b1;  // OP == 1100 -> SGT
-				
-				4'b1101: result = (In1 == In2)? 32'b1:32'b0; // OP == 1101 -> comparacao de igualdade (beq)
-            
-            default: result = 32'b0; // Default case
-        endcase
-    end
+  always @(*) begin
+    case (codigo_controle)
+      4'b0000: resultado = operando_A + operando_B;   // add
+
+      4'b0001: resultado = operando_A - operando_B;   // sub
+
+      4'b0010: resultado = operando_A & operando_B;   // and
+
+      4'b0011: resultado = operando_A | operando_B;   // or
+
+      4'b0100: resultado = (operando_A < operando_B) ? 32'b1 : 32'b0; // slt
+
+      4'b0101: resultado = operando_A ^ operando_B;   // xor
+
+      4'b0110: resultado = ~(operando_A | operando_B); // nor
+
+      4'b0111: resultado = operando_A << operando_B;  // sll
+
+      4'b1000: resultado = operando_A >> operando_B;  // srl
+
+      4'b1001: resultado = operando_A >>> operando_B; // sra 
+
+      4'b1010: resultado = ($unsigned(operando_A) < $unsigned(operando_B)) ? 32'b1 : 32'b0; // sltu
+
+      4'b1100: zero_flag = (operando_A == operando_B) ? 1'b1 : 1'b0; //BEQ
+
+      4'b1110: zero_flag = (operando_A != operando_B) ? 1'b1 : 1'b0;	//BNE
+      
+      4'b1011: resultado = operando_A;               // jr
+
+      4'b1101: resultado = operando_A;               // jal 
+
+      4'b1111: resultado = {16'b0, operando_A[15:0]}; // lui
+
+      default: resultado = 32'b0;                    // Operação indefinida (xxxx)
+    endcase
+
+    zero_flag = (resultado == 32'b0) ? 1'b1 : 1'b0;  // Define o flag de zero
+    
+  end
 
 endmodule
