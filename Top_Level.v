@@ -99,7 +99,7 @@ module Top_Level(
 	.A(i_out[20:16]),
 	.B(i_out[15:11]),
 	.S(o_reg_dst),
-	.Y(Mux_5bits_Y),
+	.Y(Mux_5bits_Y)
 	);
 	
 	
@@ -130,7 +130,7 @@ module Top_Level(
 	.A(ReadData2),
 	.B(Y_Ext),
 	.S(o_alu_src),
-	.Y(Mux_5bits_Y_ULA),
+	.Y(Mux_5bits_Y_ULA)
 	);
 	
 	ULA(
@@ -159,14 +159,14 @@ module Top_Level(
 	.A(Soma4_Y),
 	.B(pc_desvio),
 	.S((o_branch_beq | o_branch_bne) & zero_flag),
-	.Y(Mux2x1_32bits_Y),
+	.Y(Mux2x1_32bits_Y)
 	);
 	
 	Mux2x1_32bits mem_or_ula(
 	.A(resultado),
 	.B(data_out),
 	.S(o_memto_reg),
-	.Y(Mux2x1_32bits_Y_memOrUla),
+	.Y(Mux2x1_32bits_Y_memOrUla)
 	);
 	
 	

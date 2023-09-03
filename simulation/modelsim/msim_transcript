@@ -1,0 +1,143 @@
+# Reading pref.tcl
+# do Processador_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 2020.1 Lib Mapping Utility 2020.02 Feb 28 2020
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/20.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/Rural/Eng.\ Software/Repositorio\ GMA/ProjetoArqMIPS32 {D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/alu_decoder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:25:57 on Sep 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32" D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/alu_decoder.v 
+# -- Compiling module alu_decoder
+# 
+# Top level modules:
+# 	alu_decoder
+# End time: 20:25:57 on Sep 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Rural/Eng.\ Software/Repositorio\ GMA/ProjetoArqMIPS32 {D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/i_mem.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:25:57 on Sep 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32" D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/i_mem.v 
+# -- Compiling module i_mem
+# 
+# Top level modules:
+# 	i_mem
+# End time: 20:25:57 on Sep 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Rural/Eng.\ Software/Repositorio\ GMA/ProjetoArqMIPS32 {D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/control.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:25:57 on Sep 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32" D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/control.v 
+# -- Compiling module control
+# 
+# Top level modules:
+# 	control
+# End time: 20:25:57 on Sep 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Rural/Eng.\ Software/Repositorio\ GMA/ProjetoArqMIPS32 {D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:25:57 on Sep 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32" D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v 
+# -- Compiling module data_mem
+# 
+# Top level modules:
+# 	data_mem
+# End time: 20:25:57 on Sep 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Rural/Eng.\ Software/Repositorio\ GMA/ProjetoArqMIPS32 {D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:25:57 on Sep 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32" D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v 
+# -- Compiling module regfile
+# 
+# Top level modules:
+# 	regfile
+# End time: 20:25:58 on Sep 03,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Rural/Eng.\ Software/Repositorio\ GMA/ProjetoArqMIPS32 {D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ExtensorSinal.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:25:58 on Sep 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32" D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ExtensorSinal.v 
+# -- Compiling module ExtensorSinal
+# 
+# Top level modules:
+# 	ExtensorSinal
+# End time: 20:25:58 on Sep 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Rural/Eng.\ Software/Repositorio\ GMA/ProjetoArqMIPS32 {D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Mux2x1_32bits.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:25:58 on Sep 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32" D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Mux2x1_32bits.v 
+# -- Compiling module Mux2x1_32bits
+# 
+# Top level modules:
+# 	Mux2x1_32bits
+# End time: 20:25:58 on Sep 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Rural/Eng.\ Software/Repositorio\ GMA/ProjetoArqMIPS32 {D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Mux2x1_5bits.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:25:58 on Sep 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32" D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Mux2x1_5bits.v 
+# -- Compiling module Mux2x1_5bits
+# 
+# Top level modules:
+# 	Mux2x1_5bits
+# End time: 20:25:58 on Sep 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Rural/Eng.\ Software/Repositorio\ GMA/ProjetoArqMIPS32 {D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/RegistradorPC.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:25:58 on Sep 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32" D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/RegistradorPC.v 
+# -- Compiling module RegistradorPC
+# 
+# Top level modules:
+# 	RegistradorPC
+# End time: 20:25:58 on Sep 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Rural/Eng.\ Software/Repositorio\ GMA/ProjetoArqMIPS32 {D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/PC_Soma4.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:25:58 on Sep 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32" D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/PC_Soma4.v 
+# -- Compiling module PC_Soma4
+# 
+# Top level modules:
+# 	PC_Soma4
+# End time: 20:25:58 on Sep 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Rural/Eng.\ Software/Repositorio\ GMA/ProjetoArqMIPS32 {D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/PC_SomaDesvio.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:25:58 on Sep 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32" D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/PC_SomaDesvio.v 
+# -- Compiling module PC_SomaDesvio
+# 
+# Top level modules:
+# 	PC_SomaDesvio
+# End time: 20:25:58 on Sep 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Rural/Eng.\ Software/Repositorio\ GMA/ProjetoArqMIPS32 {D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:25:58 on Sep 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32" D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v 
+# -- Compiling module ULA
+# 
+# Top level modules:
+# 	ULA
+# End time: 20:25:58 on Sep 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/Rural/Eng.\ Software/Repositorio\ GMA/ProjetoArqMIPS32 {D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 20:25:58 on Sep 03,2023
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32" D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v 
+# -- Compiling module Top_Level
+# 
+# Top level modules:
+# 	Top_Level
+# End time: 20:25:58 on Sep 03,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 

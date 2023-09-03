@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Processador
-Sun Sep 03 18:06:18 2023
+Sun Sep 03 20:18:49 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -51,7 +51,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Sep 03 18:06:18 2023       ;
+; Analysis & Synthesis Status     ; Successful - Sun Sep 03 20:18:49 2023       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; Processador                                 ;
 ; Top-level Entity Name           ; Top_Level                                   ;
@@ -76,7 +76,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Device                                                                          ; 5CEFA7F31C6        ;                    ;
 ; Top-level entity name                                                           ; Top_Level          ; Processador        ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
@@ -1395,7 +1395,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Sep 03 18:06:10 2023
+    Info: Processing started: Sun Sep 03 20:18:41 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processador -c Processador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1423,10 +1423,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file pc_soma
     Info (12023): Found entity 1: PC_SomaDesvio File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/PC_SomaDesvio.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file ula.v
     Info (12023): Found entity 1: ULA File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v Line: 1
-Warning (10275): Verilog HDL Module Instantiation warning at Top_Level.v(103): ignored dangling comma in List of Port Connections File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 103
-Warning (10275): Verilog HDL Module Instantiation warning at Top_Level.v(134): ignored dangling comma in List of Port Connections File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 134
-Warning (10275): Verilog HDL Module Instantiation warning at Top_Level.v(163): ignored dangling comma in List of Port Connections File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 163
-Warning (10275): Verilog HDL Module Instantiation warning at Top_Level.v(170): ignored dangling comma in List of Port Connections File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 170
 Info (12021): Found 1 design units, including 1 entities, in source file top_level.v
     Info (12023): Found entity 1: Top_Level File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 1
 Warning (10236): Verilog HDL Implicit Net warning at Top_Level.v(74): created implicit net for "Mux2x1_32bits_Y" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 74
@@ -1943,9 +1939,9 @@ Warning (21074): Design contains 3 input pin(s) that do not drive logic
 Info (21057): Implemented 343 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 340 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 434 warnings
-    Info: Peak virtual memory: 4804 megabytes
-    Info: Processing ended: Sun Sep 03 18:06:18 2023
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 430 warnings
+    Info: Peak virtual memory: 4806 megabytes
+    Info: Processing ended: Sun Sep 03 20:18:49 2023
     Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:10
 
