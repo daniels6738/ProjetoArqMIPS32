@@ -112,12 +112,12 @@ always @(*) begin
 			end
 		6'b000100:	// BEQ
 			begin
-				o_alu_control = 4'b0001;	// SUB
+				o_alu_control = 4'b1100;	
 				
 			end
 		6'b000101:	// BNE
 			begin
-				o_alu_control = 4'b0001;	// SUB
+				o_alu_control = 4'b1110;	
 			
 			end
 		6'b001000:	// ADDI
