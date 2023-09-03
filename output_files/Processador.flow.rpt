@@ -1,5 +1,5 @@
 Flow report for Processador
-Sat Sep 02 20:07:54 2023
+Sat Sep 02 21:43:26 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Sep 02 20:07:54 2023       ;
+; Flow Status                     ; Successful - Sat Sep 02 21:43:26 2023       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; Processador                                 ;
 ; Top-level Entity Name           ; ULA                                         ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/02/2023 20:07:36 ;
+; Start date & time ; 09/02/2023 21:43:06 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Processador         ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 2543655139965.169369605610000          ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 2543655139965.169370178616148          ; --            ; --          ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --          ; eda_board_design_signal_integrity ;
@@ -104,10 +104,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4814 MB             ; 00:00:11                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4721 MB             ; 00:00:00                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4725 MB             ; 00:00:00                           ;
-; Total                ; 00:00:11     ; --                      ; --                  ; 00:00:11                           ;
+; Analysis & Synthesis ; 00:00:20     ; 1.0                     ; 4824 MB             ; 00:00:11                           ;
+; Total                ; 00:00:20     ; --                      ; --                  ; 00:00:11                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -117,8 +115,6 @@ https://fpgasoftware.intel.com/eula.
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
 ; Analysis & Synthesis ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; L340-daniels     ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -126,8 +122,6 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off Processador -c Processador
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off Processador -c Processador --vector_source="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Waveform3.vwf" --testbench_file="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/Waveform3.vwf.vt"
-quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/simulation/qsim/" Processador -c Processador
 
 
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Processador
-Sat Sep 02 20:07:44 2023
+Sat Sep 02 21:43:26 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -15,9 +15,10 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
   9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+ 10. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -44,7 +45,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Sep 02 20:07:44 2023       ;
+; Analysis & Synthesis Status     ; Successful - Sat Sep 02 21:43:26 2023       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; Processador                                 ;
 ; Top-level Entity Name           ; ULA                                         ;
@@ -160,20 +161,30 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                  ; Library ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
-; ULA.v                            ; yes             ; User Verilog HDL File  ; D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v ;         ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                       ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+; ULA.v                            ; yes             ; User Verilog HDL File        ; D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v                      ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf              ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc             ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc         ;         ;
+; aglobal201.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc              ;         ;
+; db/lpm_divide_3dm.tdf            ; yes             ; Auto-Generated Megafunction  ; D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/db/lpm_divide_3dm.tdf      ;         ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction  ; D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/db/sign_div_unsign_9nh.tdf ;         ;
+; db/alt_u_div_o2f.tdf             ; yes             ; Auto-Generated Megafunction  ; D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/db/alt_u_div_o2f.tdf       ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -181,14 +192,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimate of Logic utilization (ALMs needed) ; 106         ;
+; Estimate of Logic utilization (ALMs needed) ; 695         ;
 ;                                             ;             ;
-; Combinational ALUT usage for logic          ; 159         ;
-;     -- 7 input functions                    ; 1           ;
-;     -- 6 input functions                    ; 52          ;
-;     -- 5 input functions                    ; 19          ;
-;     -- 4 input functions                    ; 8           ;
-;     -- <=3 input functions                  ; 79          ;
+; Combinational ALUT usage for logic          ; 1316        ;
+;     -- 7 input functions                    ; 16          ;
+;     -- 6 input functions                    ; 58          ;
+;     -- 5 input functions                    ; 549         ;
+;     -- 4 input functions                    ; 494         ;
+;     -- <=3 input functions                  ; 199         ;
 ;                                             ;             ;
 ; Dedicated logic registers                   ; 0           ;
 ;                                             ;             ;
@@ -196,20 +207,24 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;             ;
 ; Total DSP Blocks                            ; 0           ;
 ;                                             ;             ;
-; Maximum fan-out node                        ; OP[2]~input ;
-; Maximum fan-out                             ; 57          ;
-; Total fan-out                               ; 837         ;
-; Average fan-out                             ; 2.32        ;
+; Maximum fan-out node                        ; OP[0]~input ;
+; Maximum fan-out                             ; 76          ;
+; Total fan-out                               ; 6246        ;
+; Average fan-out                             ; 4.11        ;
 +---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |ULA                       ; 159 (159)           ; 0 (0)                     ; 0                 ; 0          ; 101  ; 0            ; |ULA                ; ULA         ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                         ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                  ; Entity Name         ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |ULA                                   ; 1316 (201)          ; 0 (0)                     ; 0                 ; 0          ; 101  ; 0            ; |ULA                                                                                                 ; ULA                 ; work         ;
+;    |lpm_divide:Div0|                   ; 1115 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_3dm:auto_generated|  ; 1115 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA|lpm_divide:Div0|lpm_divide_3dm:auto_generated                                                   ; lpm_divide_3dm      ; work         ;
+;          |sign_div_unsign_9nh:divider| ; 1115 (0)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA|lpm_divide:Div0|lpm_divide_3dm:auto_generated|sign_div_unsign_9nh:divider                       ; sign_div_unsign_9nh ; work         ;
+;             |alt_u_div_o2f:divider|    ; 1115 (1115)         ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ULA|lpm_divide:Div0|lpm_divide_3dm:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_o2f:divider ; alt_u_div_o2f       ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -233,8 +248,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 16:1               ; 31 bits   ; 310 LEs       ; 186 LEs              ; 124 LEs                ; No         ; |ULA|Mux30                 ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |ULA|Add0                  ;
+; 13:1               ; 15 bits   ; 120 LEs       ; 105 LEs              ; 15 LEs                 ; No         ; |ULA|Mux30                 ;
+; 13:1               ; 15 bits   ; 120 LEs       ; 105 LEs              ; 15 LEs                 ; No         ; |ULA|Mux25                 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 32             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_3dm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -242,22 +282,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 159                         ;
-;     arith             ; 33                          ;
+; arriav_lcell_comb     ; 1316                        ;
+;     arith             ; 613                         ;
+;         0 data inputs ; 58                          ;
 ;         1 data inputs ; 1                           ;
+;         2 data inputs ; 29                          ;
 ;         3 data inputs ; 32                          ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 125                         ;
-;         2 data inputs ; 10                          ;
-;         3 data inputs ; 36                          ;
-;         4 data inputs ; 8                           ;
-;         5 data inputs ; 19                          ;
-;         6 data inputs ; 52                          ;
+;         5 data inputs ; 493                         ;
+;     extend            ; 16                          ;
+;         7 data inputs ; 16                          ;
+;     normal            ; 678                         ;
+;         2 data inputs ; 38                          ;
+;         3 data inputs ; 35                          ;
+;         4 data inputs ; 491                         ;
+;         5 data inputs ; 56                          ;
+;         6 data inputs ; 58                          ;
+;     shared            ; 9                           ;
+;         0 data inputs ; 3                           ;
+;         2 data inputs ; 3                           ;
+;         4 data inputs ; 3                           ;
 ; boundary_port         ; 101                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.20                        ;
-; Average LUT depth     ; 5.33                        ;
+; Max LUT depth         ; 91.60                       ;
+; Average LUT depth     ; 78.23                       ;
 +-----------------------+-----------------------------+
 
 
@@ -266,7 +313,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -276,7 +323,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sat Sep 02 20:07:35 2023
+    Info: Processing started: Sat Sep 02 21:43:06 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processador -c Processador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -302,17 +349,31 @@ Info (12021): Found 1 design units, including 1 entities, in source file ula.v
     Info (12023): Found entity 1: ULA File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v Line: 1
 Info (12127): Elaborating entity "ULA" for the top level hierarchy
 Warning (10230): Verilog HDL assignment warning at ULA.v(9): truncated value with size 32 to match size of target (1) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v Line: 9
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v Line: 18
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v Line: 18
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v Line: 18
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "32"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_3dm.tdf
+    Info (12023): Found entity 1: lpm_divide_3dm File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/db/lpm_divide_3dm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_9nh File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/db/sign_div_unsign_9nh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_o2f.tdf
+    Info (12023): Found entity 1: alt_u_div_o2f File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/db/alt_u_div_o2f.tdf Line: 23
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 260 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1417 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 68 input pins
     Info (21059): Implemented 33 output pins
-    Info (21061): Implemented 159 logic cells
+    Info (21061): Implemented 1316 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4814 megabytes
-    Info: Processing ended: Sat Sep 02 20:07:44 2023
-    Info: Elapsed time: 00:00:09
+    Info: Peak virtual memory: 4824 megabytes
+    Info: Processing ended: Sat Sep 02 21:43:26 2023
+    Info: Elapsed time: 00:00:20
     Info: Total CPU time (on all processors): 00:00:11
 
 

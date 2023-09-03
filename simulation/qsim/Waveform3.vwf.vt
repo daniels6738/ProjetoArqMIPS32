@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "09/02/2023 20:07:53"
+// Generated on "09/02/2023 21:37:09"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          ULA
 // 
@@ -414,26 +414,28 @@ end
 initial
 begin
 	OP[3] = 1'b0;
+	OP[3] = #440000 1'b1;
+	OP[3] = #320000 1'b0;
 end 
 // OP[ 2 ]
 initial
 begin
 	OP[2] = 1'b0;
-	OP[2] = #280000 1'b1;
-	OP[2] = #80000 1'b0;
-	OP[2] = #80000 1'b1;
-	OP[2] = #320000 1'b0;
 end 
 // OP[ 1 ]
 initial
 begin
-	OP[1] = 1'b1;
+	OP[1] = 1'b0;
+	OP[1] = #440000 1'b1;
+	OP[1] = #320000 1'b0;
 end 
 // OP[ 0 ]
 initial
 begin
 	OP[0] = 1'b0;
-	OP[0] = #440000 1'b1;
+	OP[0] = #280000 1'b1;
+	OP[0] = #80000 1'b0;
+	OP[0] = #80000 1'b1;
 	OP[0] = #320000 1'b0;
 end 
 endmodule
