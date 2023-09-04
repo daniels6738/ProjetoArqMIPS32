@@ -2,14 +2,15 @@ module i_mem (
   input wire [31:0] address,
   output wire [31:0] i_out
 );
-  parameter MEM_DEPTH = 32;  // Tamanho da memória (número de palavras)
-  parameter MEM_FILE = "instruction.list";  // Nome do arquivo de instruções
+  parameter MEM_WIDTH = 32;
+  parameter MEM_DEPTH = 32;
+  parameter MEM_FILE = "instruction.list";
 
-  reg [31:0] mem [0:MEM_DEPTH-1];
+  reg [MEM_WIDTH-1:0] mem [0:MEM_DEPTH-1];
 
   initial begin
     
-    $readmemh(MEM_FILE, mem);
+    $readmemb(MEM_FILE, mem);
 
   end
 
