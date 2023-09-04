@@ -92,7 +92,7 @@ always @(*) begin
 						end			
 					default: 	
 						begin
-							o_alu_control = 4'bxxxx; //nenhuma operacao encontrada
+							o_alu_control = 4'bzzzz; //nenhuma operacao encontrada
 							
 						end
 				endcase	
@@ -170,7 +170,7 @@ always @(*) begin
 			end
 		default:	// default state
 			begin
-				o_alu_control = 4'bxxxx;	
+				o_alu_control = 4'bzzzz;	
 				
 			end
 	endcase
