@@ -3,6 +3,6 @@ module PC_Soma4(
     output wire [31:0] Y // Saída do valor atual do PC
 );
 
-	assign Y = A+4;
+	assign Y = A+1;
 
 endmodule
