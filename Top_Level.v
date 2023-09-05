@@ -81,10 +81,10 @@ module Top_Level(
 	wire [3:0] o_alu_control;
 	wire [31:0]Y_Ext;
 	wire zero_flag;
-	wire Mux_32bits_Y_ULA;
-	//wire [31:0] data_out;
+	wire [31:0] Mux_32bits_Y_ULA;
 	wire [31:0] pc_desvio;
 	wire [31:0] Mux2x1_32bits_Y_memOrUla;
+	wire [31:0] MuxPC32_Y;
 	
 
 	PC_Soma4(
@@ -93,7 +93,7 @@ module Top_Level(
    );
   
 	RegistradorPC(
-    .A(Mux2x1_32bits_Y),
+    .A(MuxPC32_Y),
     .Clk(Clk),
 	 .Y(Y)
    );
@@ -117,8 +117,8 @@ module Top_Level(
 	);
 	
 	Mux2x1_5bits Mux5Bits_para_regfile(
-	.A(i_out[15:11]),
-	.B(i_out[20:16]),
+	.A(i_out[20:16]),
+	.B(i_out[15:11]),
 	.S(o_reg_dst),
 	.Y(Mux_5bits_Y)
 	);
@@ -148,8 +148,8 @@ module Top_Level(
 	);
 	
 	Mux2x1_32bits Mux32Bits_para_ULA(
-	.A(Y_Ext),
-	.B(ReadData2),
+	.A(ReadData2),
+	.B(Y_Ext),
 	.S(o_alu_src),
 	.Y(Mux_32bits_Y_ULA)
 	);
@@ -177,10 +177,10 @@ module Top_Level(
 	);
 	
 	Mux2x1_32bits MuxPC(
-	.A(pc_desvio),
-	.B(Soma4_Y),
+	.A(Soma4_Y),
+	.B(pc_desvio),
 	.S((o_branch_beq | o_branch_bne) & zero_flag),
-	.Y(Mux2x1_32bits_Y)
+	.Y(MuxPC32_Y)
 	);
 	
 	Mux2x1_32bits mem_or_ula(
