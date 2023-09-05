@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Processador
-Mon Sep 04 13:12:09 2023
+Mon Sep 04 21:08:07 2023
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -20,7 +20,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  12. Parameter Settings for User Entity Instance: data_mem:comb_11
  13. Port Connectivity Checks: "Mux2x1_32bits:MuxPC"
  14. Port Connectivity Checks: "ULA:comb_10"
- 15. Port Connectivity Checks: "Mux2x1_5bits:Mux5Bits_para_ULA"
+ 15. Port Connectivity Checks: "Mux2x1_32bits:Mux32Bits_para_ULA"
  16. Port Connectivity Checks: "control:comb_6"
  17. Port Connectivity Checks: "RegistradorPC:comb_4"
  18. Post-Synthesis Netlist Statistics for Top Partition
@@ -53,7 +53,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Sep 04 13:12:09 2023       ;
+; Analysis & Synthesis Status     ; Successful - Mon Sep 04 21:08:07 2023       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; Processador                                 ;
 ; Top-level Entity Name           ; Top_Level                                   ;
@@ -241,38 +241,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------+---------------------------------------------+
 ; RegistradorPC:comb_4|pc_reg[1..31]       ; Stuck at GND due to stuck port data_in      ;
 ; regfile:comb_7|regMem[31][0]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][31]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][30]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][29]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][28]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][27]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][26]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][25]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][24]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][23]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][22]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][21]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][20]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][19]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][18]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][17]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][16]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][15]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][14]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][13]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][12]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][11]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][10]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][9]              ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][8]              ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][7]              ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][6]              ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][5]              ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][4]              ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][3]              ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][2]              ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][1]              ; Lost fanout                                 ;
-; regfile:comb_7|regMem[1][0]              ; Lost fanout                                 ;
 ; regfile:comb_7|regMem[2][31]             ; Lost fanout                                 ;
 ; regfile:comb_7|regMem[2][30]             ; Lost fanout                                 ;
 ; regfile:comb_7|regMem[2][29]             ; Lost fanout                                 ;
@@ -1232,65 +1200,98 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; regfile:comb_7|regMem[31][3]             ; Lost fanout                                 ;
 ; regfile:comb_7|regMem[31][2]             ; Lost fanout                                 ;
 ; regfile:comb_7|regMem[31][1]             ; Lost fanout                                 ;
-; regfile:comb_7|regMem[0][31]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][30]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][29]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][28]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][27]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][26]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][25]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][24]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][23]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][22]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][21]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][20]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][19]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][18]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][17]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][16]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][15]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][14]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][13]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][12]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][11]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][10]             ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][9]              ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][8]              ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][7]              ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][6]              ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][5]              ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][4]              ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][3]              ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][2]              ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][1]              ; Stuck at GND due to stuck port clock_enable ;
-; regfile:comb_7|regMem[0][0]              ; Stuck at GND due to stuck port clock_enable ;
-; RegistradorPC:comb_4|pc_reg[0]           ; Stuck at GND due to stuck port data_in      ;
+; RegistradorPC:comb_4|pc_reg[0]           ; Stuck at VCC due to stuck port data_in      ;
+; regfile:comb_7|regMem[0][31]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][30]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][29]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][28]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][27]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][26]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][25]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][24]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][23]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][22]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][21]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][20]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][19]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][18]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][17]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][16]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][15]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][14]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][13]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][12]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][11]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][10]             ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][9]              ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][8]              ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][7]              ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][6]              ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][5]              ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][4]              ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][3]              ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][2]              ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][1]              ; Lost fanout                                 ;
+; regfile:comb_7|regMem[0][0]              ; Lost fanout                                 ;
+; regfile:comb_7|regMem[1][31]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][30]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][29]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][28]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][27]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][26]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][25]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][24]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][23]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][22]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][21]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][20]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][19]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][18]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][17]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][16]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][15]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][14]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][13]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][12]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][11]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][10]             ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][9]              ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][8]              ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][7]              ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][6]              ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][5]              ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][4]              ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][3]              ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][2]              ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][1]              ; Stuck at GND due to stuck port clock_enable ;
+; regfile:comb_7|regMem[1][0]              ; Stuck at GND due to stuck port clock_enable ;
 ; Total Number of Removed Registers = 1056 ;                                             ;
 +------------------------------------------+---------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                              ;
-+--------------------------------+---------------------------+-------------------------------------------------------------+
-; Register name                  ; Reason for Removal        ; Registers Removed due to This Register                      ;
-+--------------------------------+---------------------------+-------------------------------------------------------------+
-; RegistradorPC:comb_4|pc_reg[1] ; Stuck at GND              ; regfile:comb_7|regMem[0][31], regfile:comb_7|regMem[0][30], ;
-;                                ; due to stuck port data_in ; regfile:comb_7|regMem[0][29], regfile:comb_7|regMem[0][28], ;
-;                                ;                           ; regfile:comb_7|regMem[0][27], regfile:comb_7|regMem[0][26], ;
-;                                ;                           ; regfile:comb_7|regMem[0][25], regfile:comb_7|regMem[0][24], ;
-;                                ;                           ; regfile:comb_7|regMem[0][23], regfile:comb_7|regMem[0][22], ;
-;                                ;                           ; regfile:comb_7|regMem[0][21], regfile:comb_7|regMem[0][20], ;
-;                                ;                           ; regfile:comb_7|regMem[0][19], regfile:comb_7|regMem[0][18], ;
-;                                ;                           ; regfile:comb_7|regMem[0][17], regfile:comb_7|regMem[0][16], ;
-;                                ;                           ; regfile:comb_7|regMem[0][15], regfile:comb_7|regMem[0][14], ;
-;                                ;                           ; regfile:comb_7|regMem[0][13], regfile:comb_7|regMem[0][12], ;
-;                                ;                           ; regfile:comb_7|regMem[0][11], regfile:comb_7|regMem[0][10], ;
-;                                ;                           ; regfile:comb_7|regMem[0][9], regfile:comb_7|regMem[0][8],   ;
-;                                ;                           ; regfile:comb_7|regMem[0][7], regfile:comb_7|regMem[0][6],   ;
-;                                ;                           ; regfile:comb_7|regMem[0][5], regfile:comb_7|regMem[0][4],   ;
-;                                ;                           ; regfile:comb_7|regMem[0][3], regfile:comb_7|regMem[0][2],   ;
-;                                ;                           ; regfile:comb_7|regMem[0][0]                                 ;
-+--------------------------------+---------------------------+-------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                               ;
++--------------------------------+---------------------------+--------------------------------------------------------------+
+; Register name                  ; Reason for Removal        ; Registers Removed due to This Register                       ;
++--------------------------------+---------------------------+--------------------------------------------------------------+
+; RegistradorPC:comb_4|pc_reg[1] ; Stuck at GND              ; RegistradorPC:comb_4|pc_reg[0], regfile:comb_7|regMem[0][0], ;
+;                                ; due to stuck port data_in ; regfile:comb_7|regMem[1][31], regfile:comb_7|regMem[1][30],  ;
+;                                ;                           ; regfile:comb_7|regMem[1][29], regfile:comb_7|regMem[1][28],  ;
+;                                ;                           ; regfile:comb_7|regMem[1][27], regfile:comb_7|regMem[1][26],  ;
+;                                ;                           ; regfile:comb_7|regMem[1][25], regfile:comb_7|regMem[1][24],  ;
+;                                ;                           ; regfile:comb_7|regMem[1][23], regfile:comb_7|regMem[1][22],  ;
+;                                ;                           ; regfile:comb_7|regMem[1][21], regfile:comb_7|regMem[1][20],  ;
+;                                ;                           ; regfile:comb_7|regMem[1][19], regfile:comb_7|regMem[1][18],  ;
+;                                ;                           ; regfile:comb_7|regMem[1][17], regfile:comb_7|regMem[1][16],  ;
+;                                ;                           ; regfile:comb_7|regMem[1][15], regfile:comb_7|regMem[1][14],  ;
+;                                ;                           ; regfile:comb_7|regMem[1][13], regfile:comb_7|regMem[1][12],  ;
+;                                ;                           ; regfile:comb_7|regMem[1][11], regfile:comb_7|regMem[1][10],  ;
+;                                ;                           ; regfile:comb_7|regMem[1][9], regfile:comb_7|regMem[1][8],    ;
+;                                ;                           ; regfile:comb_7|regMem[1][7], regfile:comb_7|regMem[1][6],    ;
+;                                ;                           ; regfile:comb_7|regMem[1][5], regfile:comb_7|regMem[1][4],    ;
+;                                ;                           ; regfile:comb_7|regMem[1][3], regfile:comb_7|regMem[1][2],    ;
+;                                ;                           ; regfile:comb_7|regMem[1][1], regfile:comb_7|regMem[1][0]     ;
++--------------------------------+---------------------------+--------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -1347,15 +1348,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Mux2x1_5bits:Mux5Bits_para_ULA"                                                                                                                                                    ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; A    ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; B    ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (5 bits) it drives.  The 27 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; Y    ; Output ; Warning  ; Output or bidir port (5 bits) is wider than the port expression (1 bits) it drives; bit(s) "Y[4..1]" have no fanouts                                                               ;
-+------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Mux2x1_32bits:Mux32Bits_para_ULA"                                                                                      ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
+; Y    ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (1 bits) it drives; bit(s) "Y[31..1]" have no fanouts ;
++------+--------+----------+------------------------------------------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------+
@@ -1381,9 +1380,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
+; arriav_lcell_comb     ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
 ; boundary_port         ; 98                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 0.00                        ;
@@ -1406,7 +1405,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Sep 04 13:12:00 2023
+    Info: Processing started: Mon Sep 04 21:07:59 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Processador -c Processador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1452,38 +1451,6 @@ Info (12128): Elaborating entity "PC_Soma4" for hierarchy "PC_Soma4:comb_3" File
 Info (12128): Elaborating entity "RegistradorPC" for hierarchy "RegistradorPC:comb_4" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 99
 Info (12128): Elaborating entity "i_mem" for hierarchy "i_mem:comb_5" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 104
 Warning (10850): Verilog HDL warning at i_mem.v(12): number of words (62) in memory file does not match the number of elements in the address range [0:31] File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/i_mem.v Line: 12
-Warning (10230): Verilog HDL assignment warning at instruction.list(1): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 1
-Warning (10230): Verilog HDL assignment warning at instruction.list(2): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 2
-Warning (10230): Verilog HDL assignment warning at instruction.list(3): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 3
-Warning (10230): Verilog HDL assignment warning at instruction.list(4): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 4
-Warning (10230): Verilog HDL assignment warning at instruction.list(5): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 5
-Warning (10230): Verilog HDL assignment warning at instruction.list(6): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 6
-Warning (10230): Verilog HDL assignment warning at instruction.list(7): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 7
-Warning (10230): Verilog HDL assignment warning at instruction.list(8): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 8
-Warning (10230): Verilog HDL assignment warning at instruction.list(9): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 9
-Warning (10230): Verilog HDL assignment warning at instruction.list(10): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 10
-Warning (10230): Verilog HDL assignment warning at instruction.list(11): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 11
-Warning (10230): Verilog HDL assignment warning at instruction.list(12): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 12
-Warning (10230): Verilog HDL assignment warning at instruction.list(13): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 13
-Warning (10230): Verilog HDL assignment warning at instruction.list(14): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 14
-Warning (10230): Verilog HDL assignment warning at instruction.list(15): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 15
-Warning (10230): Verilog HDL assignment warning at instruction.list(16): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 16
-Warning (10230): Verilog HDL assignment warning at instruction.list(17): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 17
-Warning (10230): Verilog HDL assignment warning at instruction.list(18): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 18
-Warning (10230): Verilog HDL assignment warning at instruction.list(19): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 19
-Warning (10230): Verilog HDL assignment warning at instruction.list(20): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 20
-Warning (10230): Verilog HDL assignment warning at instruction.list(21): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 21
-Warning (10230): Verilog HDL assignment warning at instruction.list(22): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 22
-Warning (10230): Verilog HDL assignment warning at instruction.list(23): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 23
-Warning (10230): Verilog HDL assignment warning at instruction.list(24): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 24
-Warning (10230): Verilog HDL assignment warning at instruction.list(25): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 25
-Warning (10230): Verilog HDL assignment warning at instruction.list(26): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 26
-Warning (10230): Verilog HDL assignment warning at instruction.list(27): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 27
-Warning (10230): Verilog HDL assignment warning at instruction.list(28): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 28
-Warning (10230): Verilog HDL assignment warning at instruction.list(29): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 29
-Warning (10230): Verilog HDL assignment warning at instruction.list(30): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 30
-Warning (10230): Verilog HDL assignment warning at instruction.list(31): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 31
-Warning (10230): Verilog HDL assignment warning at instruction.list(32): truncated value with size 128 to match size of target (32) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/instruction.list Line: 32
 Warning (10030): Net "mem.data_a" at i_mem.v(8) has no driver or initial value, using a default initial value '0' File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/i_mem.v Line: 8
 Warning (10030): Net "mem.waddr_a" at i_mem.v(8) has no driver or initial value, using a default initial value '0' File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/i_mem.v Line: 8
 Warning (10030): Net "mem.we_a" at i_mem.v(8) has no driver or initial value, using a default initial value '0' File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/i_mem.v Line: 8
@@ -1494,6 +1461,7 @@ Warning (10855): Verilog HDL warning at regfile.v(15): initial value for variabl
 Warning (10240): Verilog HDL Always Construct warning at regfile.v(21): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/regfile.v Line: 21
 Info (12128): Elaborating entity "alu_decoder" for hierarchy "alu_decoder:comb_8" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 143
 Info (12128): Elaborating entity "ExtensorSinal" for hierarchy "ExtensorSinal:comb_9" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 148
+Info (12128): Elaborating entity "Mux2x1_32bits" for hierarchy "Mux2x1_32bits:Mux32Bits_para_ULA" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 155
 Info (12128): Elaborating entity "ULA" for hierarchy "ULA:comb_10" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 163
 Warning (10240): Verilog HDL Always Construct warning at ULA.v(13): inferring latch(es) for variable "resultado", which holds its previous value in one or more paths through the always construct File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v Line: 13
 Info (10041): Inferred latch for "resultado[0]" at ULA.v(13) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v Line: 13
@@ -1563,9 +1531,45 @@ Info (10041): Inferred latch for "data_out[29]" at data_mem.v(15) File: D:/Rural
 Info (10041): Inferred latch for "data_out[30]" at data_mem.v(15) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
 Info (10041): Inferred latch for "data_out[31]" at data_mem.v(15) File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
 Info (12128): Elaborating entity "PC_SomaDesvio" for hierarchy "PC_SomaDesvio:comb_12" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 177
-Info (12128): Elaborating entity "Mux2x1_32bits" for hierarchy "Mux2x1_32bits:MuxPC" File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 184
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "i_mem:comb_5|mem" is uninferred due to inappropriate RAM size File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/i_mem.v Line: 8
+Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
+    Warning (13049): Converted tri-state buffer "alu_decoder:comb_8|o_alu_control[0]" feeding internal logic into a wire File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/alu_decoder.v Line: 6
+    Warning (13049): Converted tri-state buffer "alu_decoder:comb_8|o_alu_control[1]" feeding internal logic into a wire File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/alu_decoder.v Line: 6
+    Warning (13049): Converted tri-state buffer "alu_decoder:comb_8|o_alu_control[2]" feeding internal logic into a wire File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/alu_decoder.v Line: 6
+    Warning (13049): Converted tri-state buffer "alu_decoder:comb_8|o_alu_control[3]" feeding internal logic into a wire File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/alu_decoder.v Line: 6
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[1]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[2]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[3]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[4]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[5]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[6]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[7]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[8]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[9]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[10]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[11]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[12]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[13]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[14]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[15]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[16]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[17]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[18]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[19]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[20]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[21]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[22]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[23]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[24]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[25]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[26]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[27]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[28]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[29]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[30]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[31]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
+Warning (14025): LATCH primitive "data_mem:comb_11|data_out[0]" is permanently disabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/data_mem.v Line: 15
 Warning (14026): LATCH primitive "ULA:comb_10|resultado[9]" is permanently enabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v Line: 13
 Warning (14026): LATCH primitive "ULA:comb_10|resultado[8]" is permanently enabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v Line: 13
 Warning (14026): LATCH primitive "ULA:comb_10|resultado[7]" is permanently enabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v Line: 13
@@ -1600,7 +1604,7 @@ Warning (14026): LATCH primitive "ULA:comb_10|resultado[30]" is permanently enab
 Warning (14026): LATCH primitive "ULA:comb_10|resultado[31]" is permanently enabled File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/ULA.v Line: 13
 Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "Y[0]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 6
+    Warning (13410): Pin "Y[0]" is stuck at VCC File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 6
     Warning (13410): Pin "Y[1]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 6
     Warning (13410): Pin "Y[2]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 6
     Warning (13410): Pin "Y[3]" is stuck at GND File: D:/Rural/Eng. Software/Repositorio GMA/ProjetoArqMIPS32/Top_Level.v Line: 6
@@ -1706,10 +1710,10 @@ Warning (21074): Design contains 2 input pin(s) that do not drive logic
 Info (21057): Implemented 98 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 96 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 185 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 190 warnings
     Info: Peak virtual memory: 4802 megabytes
-    Info: Processing ended: Mon Sep 04 13:12:09 2023
-    Info: Elapsed time: 00:00:09
+    Info: Processing ended: Mon Sep 04 21:08:07 2023
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:11
 
 

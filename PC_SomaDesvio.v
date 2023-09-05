@@ -1,13 +1,11 @@
 module PC_SomaDesvio (
   input [31:0] pcAtual,     // Valor atual do contador de programa
   input [31:0] valorDesvio, // Valor de desvio
-  output reg [31:0] novoPC  // Novo valor do contador de programa
+  output wire [31:0] novoPC  // Novo valor do contador de programa
 );
 
-  // Sempre que houver uma mudança no valor de pcAtual ou valorDesvio,
-  // atualize o novoPC.
-  always @(*) begin
-    novoPC = pcAtual + (valorDesvio * 4);
-  end
+
+   assign novoPC = pcAtual + valorDesvio;
+
 
 endmodule

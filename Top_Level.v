@@ -81,7 +81,7 @@ module Top_Level(
 	wire [3:0] o_alu_control;
 	wire [31:0]Y_Ext;
 	wire zero_flag;
-	wire Mux_5bits_Y_ULA;
+	wire Mux_32bits_Y_ULA;
 	//wire [31:0] data_out;
 	wire [31:0] pc_desvio;
 	wire [31:0] Mux2x1_32bits_Y_memOrUla;
@@ -117,8 +117,8 @@ module Top_Level(
 	);
 	
 	Mux2x1_5bits Mux5Bits_para_regfile(
-	.A(i_out[20:16]),
-	.B(i_out[15:11]),
+	.A(i_out[15:11]),
+	.B(i_out[20:16]),
 	.S(o_reg_dst),
 	.Y(Mux_5bits_Y)
 	);
@@ -147,17 +147,17 @@ module Top_Level(
 	.Y(Y_Ext)
 	);
 	
-	Mux2x1_5bits Mux5Bits_para_ULA(
-	.A(ReadData2),
-	.B(Y_Ext),
+	Mux2x1_32bits Mux32Bits_para_ULA(
+	.A(Y_Ext),
+	.B(ReadData2),
 	.S(o_alu_src),
-	.Y(Mux_5bits_Y_ULA)
+	.Y(Mux_32bits_Y_ULA)
 	);
 	
 	ULA(
 	.codigo_controle(o_alu_control),
 	.operando_A(ReadData1),
-	.operando_B(Mux_5bits_Y_ULA),
+	.operando_B(Mux_32bits_Y_ULA),
 	.resultado(resultado),
 	.zero_flag(zero_flag)
 	);
@@ -177,8 +177,8 @@ module Top_Level(
 	);
 	
 	Mux2x1_32bits MuxPC(
-	.A(Soma4_Y),
-	.B(pc_desvio),
+	.A(pc_desvio),
+	.B(Soma4_Y),
 	.S((o_branch_beq | o_branch_bne) & zero_flag),
 	.Y(Mux2x1_32bits_Y)
 	);
